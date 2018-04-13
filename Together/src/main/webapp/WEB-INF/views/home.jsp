@@ -5,8 +5,7 @@
 <title>Home</title>
 </head>
 <body>
-	<h1>Hello world!</h1>
-
-	<P>The time on the server is ${serverTime}. 아임 일베 - 준희 앤드 민호 -</P>
+	<h1>메인페이지</h1>
+	<h2>파일 수정 함부로 하지 맛세용.</h2>
 </body>
 </html>
