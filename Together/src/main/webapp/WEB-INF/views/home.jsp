@@ -10,5 +10,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. 아임 일베 박민호 2기!! dijdwjijdwijdwij - PMH -</P>
+<P>  The time on the server is ${serverTime}. 아임 일베 박민호 IoT2기!! - PMH -</P>
 </body>
 </html>
