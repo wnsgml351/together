@@ -10,7 +10,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title></title>
-<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./together/resources/css/main.css">
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="./js/main.js"></script>
+<!-- <script src="./together/resources/js/main.js"></script> -->
 
 </head>
 <body>
@@ -40,7 +40,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand"><img src="./img/logo3.png"></a>
+				<a href="#" class="navbar-brand"><img src="./together/resources/img/logo3.png"></a>
 			</div>
 
 
@@ -71,8 +71,8 @@
                                             </a>
                                     </div><!-- /card-container --></li>
 					<li><a href="#">회원가입</a></li>
-					<li><a href="#"><img src="./img/user.png"></a></li>
-					<li><a href="#"><img src="./img/alarm.png"></a></li>
+					<li><a href="#"><img src="./together/resources/imguser.png"></a></li>
+					<li><a href="#"><img src="./together/resources/imgalarm.png"></a></li>
 				</ul>
 			</nav>
 
