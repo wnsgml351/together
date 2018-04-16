@@ -29,10 +29,6 @@
 			function() {
 				var ctx = document.getElementById("chart");
 				$(window).resize(function() {
-					var a = ctx.height;
-					if (a > 200) {
-						$("#chart").height("200px");
-					}
 					$(".chartContainer").width($(window).width() / 1.3);
 				});
 
