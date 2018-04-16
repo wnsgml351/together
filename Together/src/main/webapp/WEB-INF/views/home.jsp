@@ -1,43 +1,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>메인페이지</title>
 <link rel="stylesheet" href="./resources/css/main.css">
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<!-- <script src="./together/resources/js/main.js"></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- <script src="./resources/js/main.js"></script> -->
 
 </head>
 <body>
 
-	<header class="navbar navbar-static-top bs-docs-nav" id="top"
-		role="banner">
+	<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
 		<div class="container">
-			<button class="navbar-toggle collapsed" type="button"
-				data-toggle="collapse" data-target=".bs-navbar-collapse"
-				style="padding: 35px 10px;">
-				<span class="sr-only">네비게이션 끄기/켜기</span> <span class="icon-bar"></span>
-				<span class="icon-bar"></span> <span class="icon-bar"></span>
+			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" style="padding: 35px 10px;">
+				<span class="sr-only">네비게이션 끄기/켜기</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand"><img src="./resources/img/logo3.png"></a>
@@ -81,39 +67,23 @@
 			<!--masthead-->
 			<nav class="collapse navbar-collapse bs-navbar-collapse">
 				<ul class="nav nav-justified" style="padding-left: 25px;">
-					<li role="presentation" class="active dropdown"
-						style="font-size: 17px;"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#" role="button"
-						aria-expanded="false"><span style="color: #8dc43f;">3C</span><span
-							style="color: #0f76ba;">YS</span></a>
+					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">3C</span><span style="color: #0f76ba;">YS</span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">제품소개</a></li>
 							<li><a href="#">설치방법</a></li>
 						</ul></li>
-					<li role="presentation" class="active dropdown"
-						style="font-size: 17px;"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#" role="button"
-						aria-expanded="false"><span style="color: #8dc43f;">기기등록
-								/ </span><span style="color: #0f76ba;">관리</span></a>
+					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">기기등록 / </span><span style="color: #0f76ba;">관리</span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">기기등록</a></li>
 							<li><a href="#">기기수정/관리</a></li>
 						</ul></li>
-					<li role="presentation" class="active dropdown"
-						style="font-size: 17px;"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#" role="button"
-						aria-expanded="false"><span style="color: #8dc43f;">상품</span><span
-							style="color: #0f76ba;">서비스</span></a>
+					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">상품</span><span style="color: #0f76ba;">서비스</span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">모니터링 서비스</a></li>
 							<li><a href="#">상품 추천 서비스</a></li>
 							<li><a href="#">독거노인 안심 서비스</a></li>
 						</ul></li>
-					<li role="presentation" class="active dropdown"
-						style="font-size: 17px;"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#" role="button"
-						aria-expanded="false"><span style="color: #8dc43f;">고객</span><span
-							style="color: #0f76ba;">지원</span></a>
+					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">고객</span><span style="color: #0f76ba;">지원</span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">공지사항</a></li>
 							<li><a href="#">자주묻는 질문</a></li>
