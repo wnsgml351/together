@@ -165,7 +165,7 @@
 
 	<div class="container">
 		<h2>실시간 전력 그래프</h2>
-
+		<h3>d이야야아이야이야야ㅑ</h3>
 		<canvas height="80" id="chart">
 		</canvas>
 
