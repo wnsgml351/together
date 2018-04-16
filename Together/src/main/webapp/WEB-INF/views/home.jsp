@@ -20,19 +20,24 @@
 .chartContainer {
 	margin-left: auto;
 	margin-right: auto;
+	max-height: 200px;
+	overflow: hidden;
 }
 </style>
 <script>
 	$(document).ready(
 			function() {
 				var ctx = document.getElementById("chart");
-
 				$(window).resize(function() {
+					var a = ctx.height;
+					if (a > 200) {
+						$("#chart").height("200px");
+					}
 					$(".chartContainer").width($(window).width() / 1.3);
 				});
 
 				var myChart = new Chart(ctx, {
-					type : 'bar',
+					type : 'line',
 					data : {
 						labels : [ "Red", "Blue", "Yellow", "Green", "Purple",
 								"Orange" ],
@@ -65,7 +70,21 @@
 						}
 					}
 				});
+				
+				setInterval(function(){
+					var d = new Date();
+					myChart.data.labels.push(d.toLocaleString());
+					data = [randData()];
+					myChart.data.datasets.forEach((dataset) => {
+				        dataset.data.push(data);
+				    });
+					myChart.update();
+				}, 1000);
 			});
+	
+	function randData(){
+		return Math.ceil(Math.random() * 10);
+	}
 </script>
 </head>
 <body>
@@ -144,12 +163,12 @@
 		</div>
 	</header>
 
-	<div>
+	<div class="container">
 		<h2>실시간 전력 그래프</h2>
-		<div class="chartContainer" style="position: relative; height: 40vh; width: 80vw">
-			<canvas id="chart">
+		<h3>d이야야아이야이야야ㅑ</h3>
+		<canvas height="80" id="chart">
 		</canvas>
-		</div>
+
 
 		<!--
 	<nav aria-label="Page navigation example">
@@ -160,8 +179,8 @@
 </nav>
 -->
 	</div>
-
-	<div>
+	<!-- 
+	<div class="jumbotron">
 		<div class="col-lg-4">
 			<h2>현재 전력 소비량</h2>
 
@@ -175,7 +194,7 @@
 
 		</div>
 	</div>
-
+ -->
 
 </body>
 </html>
