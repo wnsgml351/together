@@ -16,11 +16,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- <script src="./resources/js/main.js"></script> -->
-
+<style>
+.chartContainer {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
 <script>
 	$(document).ready(
 			function() {
 				var ctx = document.getElementById("chart");
+
+				$(window).resize(function() {
+					$(".chartContainer").width($(window).width() / 1.3);
+				});
+
 				var myChart = new Chart(ctx, {
 					type : 'bar',
 					data : {
@@ -45,18 +55,13 @@
 						} ]
 					},
 					options : {
-						responsive: false,
+						responsive : true,
 						scales : {
 							yAxes : [ {
 								ticks : {
 									beginAtZero : true
 								}
 							} ]
-						},
-						legend: {
-							labels: {
-								boxWidth: 10
-							}
 						}
 					}
 				});
@@ -141,7 +146,7 @@
 
 	<div>
 		<h2>실시간 전력 그래프</h2>
-		<div width="700px">
+		<div class="chartContainer" style="position: relative; height: 40vh; width: 80vw">
 			<canvas id="chart">
 		</canvas>
 		</div>
