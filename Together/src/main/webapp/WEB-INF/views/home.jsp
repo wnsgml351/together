@@ -87,7 +87,7 @@
 						aria-expanded="false"><span style="color: #8dc43f;">3C</span><span
 							style="color: #0f76ba;">YS</span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">제품소개</a></li>
+							<li><a href="#">제품소개입니다</a></li>
 							<li><a href="#">설치방법</a></li>
 						</ul></li>
 					<li role="presentation" class="active dropdown"
