@@ -1,172 +1,179 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html>
 
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>메인페이지</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./resources/css/main.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<!-- <script src="./resources/js/main.js"></script> -->
-<style>
-.chartContainer {
-	margin-left: auto;
-	margin-right: auto;
-	max-height: 200px;
-	overflow: hidden;
-}
-</style>
-<script>
-	$(document).ready(
-			function() {
-				var ctx = document.getElementById("chart");
-				$(window).resize(function() {
-					$(".chartContainer").width($(window).width() / 1.3);
-				});
+<link rel="stylesheet" href="./resources/css/bootstrap-reset.css">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="./resources/js/main.js"></script>
 
-				var myChart = new Chart(ctx, {
-					type : 'line',
-					data : {
-						labels : [ "Red", "Blue", "Yellow", "Green", "Purple",
-								"Orange" ],
-						datasets : [ {
-							label : '# of Votes',
-							data : [ 12, 19, 3, 5, 2, 3 ],
-							backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
-									'rgba(54, 162, 235, 0.2)',
-									'rgba(255, 206, 86, 0.2)',
-									'rgba(75, 192, 192, 0.2)',
-									'rgba(153, 102, 255, 0.2)',
-									'rgba(255, 159, 64, 0.2)' ],
-							borderColor : [ 'rgba(255,99,132,1)',
-									'rgba(54, 162, 235, 1)',
-									'rgba(255, 206, 86, 1)',
-									'rgba(75, 192, 192, 1)',
-									'rgba(153, 102, 255, 1)',
-									'rgba(255, 159, 64, 1)' ],
-							borderWidth : 1
-						} ]
-					},
-					options : {
-						responsive : true,
-						scales : {
-							yAxes : [ {
-								ticks : {
-									beginAtZero : true
-								}
-							} ]
-						}
-					}
-				});
-				
-				setInterval(function(){
-					var d = new Date();
-					myChart.data.labels.push(d.toLocaleString());
-					data = [randData()];
-					myChart.data.datasets.forEach((dataset) => {
-				        dataset.data.push(data);
-				    });
-					myChart.update();
-				}, 1000);
-			});
-	
-	function randData(){
-		return Math.ceil(Math.random() * 100);
-	}
-</script>
 </head>
-<body>
 
-	<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-		<div class="container">
-			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" style="padding: 35px 10px;">
-				<span class="sr-only">네비게이션 끄기/켜기</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+
+
+
+
+<body style="padding-top: 50px;">
+	<nav class="navbar navbar-default navbar-fixed-top no-margin">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header fixed-brand">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" id="menu-toggle">
+				<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
 			</button>
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand"><img src="./resources/img/logo3.png"></a>
+			<a class="navbar-brand" style="padding: 7px 15px;" href="#"><span
+				class="fa fa-4"><img src="./resources/img/logo6.png"></span></a>
+		</div>
+		<!-- navbar-header-->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<button type="button" class="navbar-toggle pull-left">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a data-toggle="dropdown"
+					class="dropdown-toggle" href="#" aria-expanded="false"> <i
+						class="glyphicon glyphicon-user"></i> <span
+						class="badge badge-sm up bg-purple count"></span>
+				</a></li>
+				<li class="dropdown"><a data-toggle="dropdown"
+					class="dropdown-toggle" href="#" aria-expanded="false"> <i
+						class="fa fa-bell"></i> <span
+						class="badge badge-sm up bg-pink count">11</span>
+				</a></li>
+				<li class="dropdown text-center"><a data-toggle="dropdown"
+					class="dropdown-toggle" href="#"> <span class="username">로그인을
+							해주세요</span> <span class="caret"></span>
+				</a></li>
+			</ul>
+
+		</div>
+		<!-- bs-example-navbar-collapse-1 -->
+
+	</nav>
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+				<li class="active"><a href="#"><span
+						class="fa-stack fa-lg pull-left"><i
+							class="fa fa-unlock fa-stack-1x "></i></span>로그인</a></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-registered fa-stack-1x "></i></span>회원가입</a></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="glyphicon glyphicon-user fa-stack-1x "></i></span>My Page</a></li>
+				<li><a href="#"> <span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-bell fa-stack-1x "></i></span>message
+				</a></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-bars fa-stack-1x "></i></span>3CYS</a>
+					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
+						<li><a href="#">제품 소개</a></li>
+						<li><a href="#">설치 방법</a></li>
+					</ul></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-bars fa-stack-1x "></i></span>기기등록 / 관리</a>
+					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
+						<li><a href="#">기기 등록</a></li>
+						<li><a href="#">기기수정 / 관리</a></li>
+					</ul></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-bars fa-stack-1x "></i></span>상품 서비스</a>
+					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
+						<li><a href="#">모니터링 서비스</a></li>
+						<li><a href="#">상품 추천 서비스</a></li>
+						<li><a href="#">독거노인 안심 서비스</a></li>
+					</ul></li>
+				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
+							class="fa fa-bars fa-stack-1x "></i></span>고객지원</a>
+					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
+						<li><a href="#">자주묻는 질문</a></li>
+						<li><a href="#">1:1 문의하기</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<!-- /#sidebar-wrapper -->
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid xyz">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>
+							메인메인
+						</h1>
+						<p>싫다싫다</p>
+					</div>
+				</div>
 			</div>
-
-			<nav class="collapse navbar-collapse bs-navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-					<li><a href="#"><img src="./resources/img/user.png"></a></li>
-					<li><a href="#"><img src="./resources/img/alarm.png"></a></li>
-				</ul>
-			</nav>
-
 		</div>
-		<div class="container">
-			<!--masthead-->
-			<nav class="collapse navbar-collapse bs-navbar-collapse">
-				<ul class="nav nav-justified" style="padding-left: 25px;">
-					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">3C</span><span style="color: #0f76ba;">YS</span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">제품소개</a></li>
-							<li><a href="#">설치방법</a></li>
-						</ul></li>
-					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">기기등록 / </span><span style="color: #0f76ba;">관리</span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">기기등록</a></li>
-							<li><a href="#">기기수정/관리</a></li>
-						</ul></li>
-					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">상품</span><span style="color: #0f76ba;">서비스</span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">모니터링 서비스</a></li>
-							<li><a href="#">상품 추천 서비스</a></li>
-							<li><a href="#">독거노인 안심 서비스</a></li>
-						</ul></li>
-					<li role="presentation" class="active dropdown" style="font-size: 17px;"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><span style="color: #8dc43f;">고객</span><span style="color: #0f76ba;">지원</span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">공지사항</a></li>
-							<li><a href="#">자주묻는 질문</a></li>
-							<li><a href="#">1:1문의하기</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-	<div class="container">
-		<h2>실시간 전력 그래프</h2>
-		<h3>ㅇㅇㅇㅇ</h3>
-		<canvas height="80" id="chart">
-		</canvas>
-
-
-		<!--
-	<nav aria-label="Page navigation example">
-  <ul class="pager">
-    
-    <li class="next"><a href="#">More <span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</nav>
--->
+		<!-- /#page-content-wrapper -->
 	</div>
-	<!-- 
-	<div class="jumbotron">
-		<div class="col-lg-4">
-			<h2>현재 전력 소비량</h2>
+	<!-- /#wrapper -->
+	<!-- jQuery -->
 
-		</div>
-		<div class="col-lg-4">
-			<h2>한 달 전력 소비량</h2>
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+		$("#menu-toggle-2").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled-2");
+			$('#menu ul').hide();
+		});
 
-		</div>
-		<div class="col-lg-4">
-			<h2>누진 단계</h2>
-
-		</div>
-	</div>
- -->
+		function initMenu() {
+			$('#menu ul').hide();
+			$('#menu ul').children('.current').parent().show();
+			//$('#menu ul:first').show();
+			$('#menu li a').click(function() {
+				var checkElement = $(this).next();
+				if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+					return false;
+				}
+				if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+					$('#menu ul:visible').slideUp('normal');
+					checkElement.slideDown('normal');
+					return false;
+				}
+			});
+		}
+		$(document).ready(function() {
+			initMenu();
+		});
+		//# sourceURL=pen.js
+	</script>
 
 </body>
+
 </html>
