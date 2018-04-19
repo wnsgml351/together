@@ -96,7 +96,7 @@
 			<ul class="navbar-nav sidenav-toggler"
 				style="margin-top: calc(100vh - 62px)">
 				<li class="nav-item" style="height: 100vh;"><a
-					class="nav-link text-center" id="sidenavToggler"> <i
+					class="nav-link text-center" style="padding: 1.5em;" id="sidenavToggler"> <i
 						class="fa fa-fw fa-angle-left"></i>
 				</a></li>
 			</ul>
