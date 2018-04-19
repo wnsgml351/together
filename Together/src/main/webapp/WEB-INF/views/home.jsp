@@ -48,6 +48,11 @@
 		<a class="scroll-to-top rounded" href="#page-top"> <i
 			class="fa fa-angle-up"></i>
 		</a>
+		
+		<div>
+			<jsp:include page="login.jsp" flush="false"/>
+		</div>
+		
 	</div>
 	
 	<!-- Page level plugin JavaScript-->
