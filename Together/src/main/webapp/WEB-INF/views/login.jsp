@@ -16,14 +16,17 @@
 			<div class="modal-body">
 				<form>
 					<div class="form-group">
-						<label for="exampleInputEmail1">ID</label> <input
-							class="form-control" id="exampleInputEmail1" type="text"
-							placeholder="ID">
+						<label for="id">ID</label> <input
+							class="form-control" id="id" type="text"
+							placeholder="ID"><br>
+							<div id="message-id"></div>
+							
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label> <input
 							class="form-control" id="Password" type="password"
-							placeholder="Password">
+							placeholder="Password"><br>
+							<div id="message-id"></div>
 					</div>
 					<a class="btn btn-primary btn-block" href="#">Login</a>
 				</form>
