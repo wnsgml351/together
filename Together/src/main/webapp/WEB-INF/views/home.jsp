@@ -2,178 +2,231 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<html>
-
-
+<html lang="UTF-8">
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title></title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./resources/css/main.css">
-<link rel="stylesheet" href="./resources/css/bootstrap-reset.css">
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="./resources/js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Document</title>
+     <!-- Bootstrap core CSS-->
+  <link href="./resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="./resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="./resources/css/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
 
 </head>
+<body class="fixed-nav sticky-footer bg-light" id="page-top">
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav">
+        <a class="navbar-brand" href="#" style="color: #2b2a2a; font-size: 1rem;"><img src="./resources/img/Nlogo.png">Network Korea</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" 
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion"><li class="nav-item" data-toggle="tooltip" data-placement="right" title="Main">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-home"></i>
+              <span class="nav-link-text">Home</span>
+            </a>
+          </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="MyPage">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-user-circle"></i>
+                    <span class="nav-link-text">MyPage</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="#">
+                  <i class="fa fa-fw fa-area-chart"></i>
+                  <span class="nav-link-text">전력량 차트</span>
+                </a>
+              </li>
+              <!--3cys-->
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="3cys">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" 
+                href="#product" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-product-hunt"></i>
+                  <span class="nav-link-text">3CYS</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="product">
+                    <li>
+                      <a href="#">제품 소개</a>
+                    </li>
+                    <li>
+                      <a href="#">설치 방법</a>
+                    </li>
+                </ul>
+              </li>
+              <!--기기등록-->
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="insert">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" 
+                href="#setting" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-plus"></i>
+                  <span class="nav-link-text">기기등록 / 관리</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="setting">
+                    <li>
+                      <a href="#">기기 등록</a>
+                    </li>
+                    <li>
+                      <a href="#">기기 수정 / 관리</a>
+                    </li>
+                </ul>
+              </li>
+              <!--서비스-->
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="service">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" 
+                href="#service" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-boxes"></i>
+                  <span class="nav-link-text">상품 서비스</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="service">
+                    <li>
+                      <a href="#">모니터링 서비스</a>
+                    </li>
+                    <li>
+                      <a href="#">상품 추천 서비스</a>
+                    </li>
+                    <li>
+                      <a href="#">독거노인 안심 서비스</a>
+                    </li>
+                </ul>
+              </li>
+              <!--고객지원-->
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Q&A">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" 
+                href="#qna" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-question-circle"></i>
+                  <span class="nav-link-text">고객지원</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="qna">
+                    <li>
+                      <a href="#">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                      <a href="#">1:1 문의</a>
+                    </li>
+                </ul>
+              </li>
+        </ul>
+        <ul class="navbar-nav sidenav-toggler" style="margin-top: calc(100vh - 62px)">
+          <li class="nav-item" style="height: 100vh;">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+        <!--상단바 ul-->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mr-lg-2" id="control" href="#" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bolt" style="color:#868e96"></i>
+              <span class="d-lg-none" style="color: #868e96">전기 메세지
+                <span class="badge badge-pill badge-primary">New</span>
+              </span>
+              <span class="indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+              </span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="control">
+              <h6 class="dropdown-header">메세지</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <strong>300호 전력 확인해주세요</strong>
+                <span class="small float-right text-muted">11:21 AM</span>
+                <div class="dropdown-message small">평소보다 많은 전력량을 사용하고 있습니다.</div>
+              </a>
+            </div>
+          </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-fw fa-bell" style="color:#868e96"></i>
+              <span class="d-lg-none" style="color: #868e96">메세지
+                <span class="badge badge-pill badge-primary">New</span>
+              </span>
+              <span class="indicator text-primary d-none d-lg-block">
+                <i class="fa fa-fw fa-circle"></i>
+              </span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+              <h6 class="dropdown-header">메세지</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <strong>독거노인 안심 서비스</strong>
+                <span class="small float-right text-muted">12:18 PM</span>
+                <div class="dropdown-message small">안심 서비스가 등록되었습니다.</div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0 mr-lg-2">
+              <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for...">
+                <span class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" style="color: #868e96;">
+              <i class="fa fa-fw fa-sign-in" style="color: #868e96;"></i>로그인</a>
+          </li>
+        </ul>
+    </div>
+    </nav>
 
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        
+    <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-area-chart"></i> 시간별 차트</div>
+            <div class="card-body">
+              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">최신 업데이트 - 13:00 PM</div>
+          </div>
+        
+      </div>
 
-<body style="padding-top: 50px;">
-	<nav class="navbar navbar-default navbar-fixed-top no-margin">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header fixed-brand">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" id="menu-toggle">
-				<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-			</button>
-			<a class="navbar-brand" style="padding: 7px 15px;" href="#"><span
-				class="fa fa-4"><img src="./resources/img/logo6.png"></span></a>
-		</div>
-		<!-- navbar-header-->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active">
-					<button type="button" class="navbar-toggle pull-left">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a data-toggle="dropdown"
-					class="dropdown-toggle" href="#" aria-expanded="false"> <i
-						class="glyphicon glyphicon-user"></i> <span
-						class="badge badge-sm up bg-purple count"></span>
-				</a></li>
-				<li class="dropdown"><a data-toggle="dropdown"
-					class="dropdown-toggle" href="#" aria-expanded="false"> <i
-						class="fa fa-bell"></i> <span
-						class="badge badge-sm up bg-pink count">11</span>
-				</a></li>
-				<li class="dropdown text-center"><a data-toggle="dropdown"
-					class="dropdown-toggle" href="#"> <span class="username">로그인을
-							해주세요</span> <span class="caret"></span>
-				</a></li>
-			</ul>
+      <footer class="sticky-footer" style="height: 62px; line-height: 62px;">
+        <div class="container">
+          <div class="text-center">
+            <small>열심히 하자</small>
+          </div>
+        </div>
+      </footer>
 
-		</div>
-		<!-- bs-example-navbar-collapse-1 -->
-
-	</nav>
-	<div id="wrapper">
-		<!-- Sidebar -->
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav nav-pills nav-stacked" id="menu">
-				<li class="active"><a href="#"><span
-						class="fa-stack fa-lg pull-left"><i
-							class="fa fa-unlock fa-stack-1x "></i></span>로그인</a></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-registered fa-stack-1x "></i></span>회원가입</a></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="glyphicon glyphicon-user fa-stack-1x "></i></span>My Page</a></li>
-				<li><a href="#"> <span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-bell fa-stack-1x "></i></span>message
-				</a></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-bars fa-stack-1x "></i></span>3CYS</a>
-					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
-						<li><a href="#">제품 소개</a></li>
-						<li><a href="#">설치 방법</a></li>
-					</ul></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-bars fa-stack-1x "></i></span>기기등록 / 관리</a>
-					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
-						<li><a href="#">기기 등록</a></li>
-						<li><a href="#">기기수정 / 관리</a></li>
-					</ul></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-bars fa-stack-1x "></i></span>상품 서비스</a>
-					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
-						<li><a href="#">모니터링 서비스</a></li>
-						<li><a href="#">상품 추천 서비스</a></li>
-						<li><a href="#">독거노인 안심 서비스</a></li>
-					</ul></li>
-				<li><a href="#"><span class="fa-stack fa-lg pull-left"><i
-							class="fa fa-bars fa-stack-1x "></i></span>고객지원</a>
-					<ul class="nav-pills nav-stacked" style="list-style-type: none;">
-						<li><a href="#">자주묻는 질문</a></li>
-						<li><a href="#">1:1 문의하기</a></li>
-					</ul></li>
-			</ul>
-		</div>
-		<!-- /#sidebar-wrapper -->
-		<!-- Page Content -->
-		<div id="page-content-wrapper">
-			<div class="container-fluid xyz">
-				<div class="row">
-					<div class="col-lg-12">
-						<h1>
-							메인메인
-						</h1>
-						<p>싫다싫다</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /#page-content-wrapper -->
-	</div>
-	<!-- /#wrapper -->
-	<!-- jQuery -->
-
-	<script>
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-		});
-		$("#menu-toggle-2").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled-2");
-			$('#menu ul').hide();
-		});
-
-		function initMenu() {
-			$('#menu ul').hide();
-			$('#menu ul').children('.current').parent().show();
-			//$('#menu ul:first').show();
-			$('#menu li a').click(function() {
-				var checkElement = $(this).next();
-				if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-					return false;
-				}
-				if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-					$('#menu ul:visible').slideUp('normal');
-					checkElement.slideDown('normal');
-					return false;
-				}
-			});
-		}
-		$(document).ready(function() {
-			initMenu();
-		});
-		//# sourceURL=pen.js
-	</script>
-
+       <!-- 맨 위로 가기-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="./resources/vendor/jquery/jquery.min.js"></script>
+    <script src="./resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="./resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="./resources/js/sb-admin.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="./resources/vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="./resources/js/sb-admin-charts.min.js"></script>
 </body>
-
 </html>
