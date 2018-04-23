@@ -99,12 +99,12 @@
                 </div>
                 <div class="card-body text-center">
                 
-                 <h6>뭐넣지</h6></p><p>
+                 <h6>이미지 준비중</h6></p><p>
                     <h1>2단계</h1>
                   </p>
                   <p style="font-size: 12px;">
                    2단계로 마감 예정입니다.
-                     <br> dkdkdkdk
+                     <br> ...
                       
                   </p>
                 </div>
