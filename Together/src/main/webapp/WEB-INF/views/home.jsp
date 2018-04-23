@@ -136,6 +136,77 @@
 	<!-- Page level plugin JavaScript-->
 	<script src="./resources/vendor/chart.js/Chart.min.js"></script>
 	<!-- Custom scripts for this page-->
-	<script src="./resources/js/sb-admin-charts.min.js"></script>
+	<!-- <script src="./resources/js/sb-admin-charts.min.js"></script>  -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+	$(document).ready(function(){
+		
+		var chart = $("#myAreaChart")[0];
+		chart.getContext("2d");
+		
+		var cData = {
+				labels: [],
+				datasets: [{
+					label: "datas",
+					backgroundColor: "rgba(255, 0, 0, 0.4)",
+					borderColor: "rgba(255, 0, 0, 0.4)",
+					data: [],
+					fill: false
+				}],
+				
+		};
+
+		var cOption = {
+			responsive: true
+		};
+		
+		var myChart = new Chart(chart, {
+			type: 'line',
+			data: cData,
+			option: cOption
+		});
+		
+		$.ajax({
+			url: "getAllData",
+			success: function(data){
+				insertData(myChart, data)
+			},
+			error: function(data){
+				alert("실패 " + data);
+			}
+		});
+	});
+	
+	function insertData(myChart, arr){
+		var len = Object.keys(arr).length;
+		var d;
+		var dd;
+		for(var i=0; i<len; i++){
+			d = new Date(arr[i].reg_date);
+			dd = splitDate(d);
+			addData(myChart, dd, arr[i].watt);
+		}
+	};
+	
+	function splitDate(date){
+		var result;
+		
+		result = date.getUTCFullYear() + "/";
+		result += date.getMonth() + "/";
+		result += date.getDate() + "/ ";
+		result += date.getHours() + ":";
+		result += date.getMinutes();
+		
+		return result;
+	};
+	
+	function addData(chart, label, data) {
+		chart.data.labels.push(label);
+		chart.data.datasets.forEach((dataset) => {
+			dataset.data.push(data);
+		});
+		chart.update();
+	};
+	</script>
 </body>
 </html>
