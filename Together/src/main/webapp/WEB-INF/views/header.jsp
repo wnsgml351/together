@@ -112,7 +112,7 @@
 							class="fa fa-fw fa-circle"></i>
 					</span>
 				</a>
-					<div class="dropdown-menu" aria-labelledby="control">
+					<div class="dropdown-menu" aria-labelledby="control" style="width:300px;">
 						<h6 class="dropdown-header">메세지</h6>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#"> <strong>300호 전력
@@ -133,7 +133,7 @@
 							class="fa fa-fw fa-circle"></i>
 					</span>
 				</a>
-					<div class="dropdown-menu" aria-labelledby="messagesDropdown">
+					<div class="dropdown-menu" aria-labelledby="messagesDropdown" style="width:300px;">
 						<h6 class="dropdown-header">메세지</h6>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#"> <strong>독거노인 안심
