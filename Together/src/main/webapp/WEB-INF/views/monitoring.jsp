@@ -17,7 +17,7 @@
 .card-body-icon {
 	position: absolute;
 	z-index: 0;
-	top: -10px !important;
+	top: 5px !important;
 	right: -0px !important;
 	font-size: 3rem !important;
 	-webkit-transform: rotate(15deg);
@@ -60,7 +60,7 @@
 
 					<!--총 사용량(한달)-->
 					<div class="col-xl-4 col-sm-6 mb-3">
-						<div class="card text-white o-hidden h-100"
+						<div class="card text-white o-hidden h-10"
 							style="background-color: rgb(232, 32, 120)">
 							<div class="card-body">
 								<div class="card-body-icon">
@@ -78,7 +78,7 @@
 
 					<!--목표 사용량(한달)-->
 					<div class="col-xl-4 col-sm-6 mb-3">
-						<div class="card text-white o-hidden h-100"
+						<div class="card text-white o-hidden h-10"
 							style="background-color: rgb(0, 123, 255)">
 							<div class="card-body">
 								<div class="card-body-icon">
@@ -96,7 +96,7 @@
 
 					<!--총 사용량(한달)-->
 					<div class="col-xl-4 col-sm-6 mb-3">
-						<div class="card text-white o-hidden h-100"
+						<div class="card text-white o-hidden h-10"
 							style="background-color: rgb(154, 203, 49)">
 							<div class="card-body">
 								<div class="card-body-icon">
