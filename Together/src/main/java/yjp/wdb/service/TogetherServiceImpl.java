@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import yjc.wdb.domain.ElecData;
-import yjc.wdb.persistence.TogetherDAO;
+import yjp.wdb.domain.ElecData;
+import yjp.wdb.persistence.TogetherDAO;
 
 @Service
 public class TogetherServiceImpl implements TogetherService {
@@ -17,8 +17,7 @@ public class TogetherServiceImpl implements TogetherService {
 
 	@Override
 	public List<ElecData> getAllData() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getAllData();
 	}
 
 }

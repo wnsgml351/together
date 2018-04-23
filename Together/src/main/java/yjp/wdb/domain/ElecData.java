@@ -1,4 +1,4 @@
-package yjc.wdb.domain;
+package yjp.wdb.domain;
 
 import java.sql.Timestamp;
 

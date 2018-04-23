@@ -1,8 +1,8 @@
-package yjc.wdb.persistence;
+package yjp.wdb.persistence;
 
 import java.util.List;
 
-import yjc.wdb.domain.ElecData;
+import yjp.wdb.domain.ElecData;
 
 public interface TogetherDAO {
 	public List<ElecData> getAllData() throws Exception;

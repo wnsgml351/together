@@ -1,4 +1,4 @@
-package yjc.wdb.persistence;
+package yjp.wdb.persistence;
 
 import java.util.List;
 
@@ -7,18 +7,19 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import yjc.wdb.domain.ElecData;
+import yjp.wdb.domain.ElecData;
 
 @Repository
 public class TogetherDAOImpl implements TogetherDAO {
 
 	@Inject
 	private SqlSession session;
+	
+	private final static String NAMESPACE = "yjp.wdb.together.sqlMapper";
 
 	@Override
 	public List<ElecData> getAllData() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectList(NAMESPACE + ".getAllData");
 	}
 
 }
