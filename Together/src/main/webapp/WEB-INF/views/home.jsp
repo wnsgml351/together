@@ -9,6 +9,25 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="author" content="">
+<style>
+/*
+.chartWrapper {
+	position: relative;
+}
+
+.chartWrapper>canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+}
+
+.chartAreaWrapper {
+	width: 600px;
+	overflow-x: scroll;
+}
+*/
+</style>
 <title>Document</title>
 
 
@@ -26,8 +45,10 @@
 				<div class="card-header">
 					<i class="fa fa-area-chart"></i> 시간별 차트
 				</div>
-				<div class="card-body">
-					<canvas id="myAreaChart" width="100%" height="30"></canvas>
+				<div class="card-body chartWrapper">
+					<div class="chartAreaWrapper">
+						<canvas id="myAreaChart" width="100%" height="30"></canvas>
+					</div>
 				</div>
 				<div class="card-footer small text-muted">최신 업데이트 - 13:00 PM</div>
 			</div>
@@ -148,8 +169,8 @@
 				labels: [],
 				datasets: [{
 					label: "datas",
-					backgroundColor: "rgba(255, 0, 0, 0.4)",
-					borderColor: "rgba(255, 0, 0, 0.4)",
+					backgroundColor: "rgba(255, 0, 0, 0.5)",
+					borderColor: "rgba(255, 0, 0, 0.2)",
 					data: [],
 					fill: false
 				}],
@@ -159,6 +180,20 @@
 		var cOption = {
 			responsive: true
 		};
+		
+		/*
+		var animationAfter = {
+				var sourceCanvas = this.chart.ctx.canvas;
+		        // the -5 is so that we don't copy the edges of the line
+		        var copyWidth = this.scale.xScalePaddingLeft - 5;
+		        // the +5 is so that the bottommost y axis label is not clipped off
+		        // we could factor this in using measureText if we wanted to be generic
+		        var copyHeight = this.scale.endPoint + 5;
+		        var targetCtx = document.getElementById("myChartAxis").getContext("2d");
+		        targetCtx.canvas.width = copyWidth;
+		        targetCtx.drawImage(sourceCanvas, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
+		}
+		*/
 		
 		var myChart = new Chart(chart, {
 			type: 'line',
