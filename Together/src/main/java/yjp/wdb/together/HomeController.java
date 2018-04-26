@@ -15,11 +15,6 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "graphView", method = RequestMethod.GET)
-	public void graphView() {
-
-	}
-
 	@RequestMapping(value = "monitoring", method = RequestMethod.GET)
 	public void monitoring() {
 
