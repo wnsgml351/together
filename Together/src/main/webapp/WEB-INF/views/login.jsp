@@ -14,21 +14,20 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<form id="loginform2">
 					<div class="form-group">
-						<label for="id">ID</label> <input
-							class="form-control" id="id" type="text"
-							placeholder="ID"><br>
-							<div id="message-id"></div>
-							
+						<label for="id">ID</label> <input class="form-control" id="id" name="id"
+							type="text" placeholder="ID"><br>
+						<div id="message-id"></div>
+
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label> <input
-							class="form-control" id="Password" type="password"
+							class="form-control" id="password" name="password" type="password"
 							placeholder="Password"><br>
-							<div id="message-id"></div>
+						<div id="message-id"></div>
 					</div>
-					<a class="btn btn-primary btn-block" href="#">Login</a>
+					<button class="btn btn-primary btn-block" id="login-btn">Login</button>
 				</form>
 			</div>
 			<div class="text-center">
