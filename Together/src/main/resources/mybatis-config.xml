@@ -6,4 +6,7 @@
 	<typeAliases>
 		<typeAlias alias="ElecData" type="yjp.wdb.domain.ElecData" />
 	</typeAliases>
+	<typeAliases>
+		<typeAlias alias="Login" type="yjp.wdb.domain.Login" />
+	</typeAliases>
 </configuration>
