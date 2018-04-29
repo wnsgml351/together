@@ -13,19 +13,19 @@
 		console.log(formObj);
 
 		$(".btn-warning").on("click", function() {
-			formObj.attr("action", "/web/board/modify2");
+			formObj.attr("action", "/Together/board/modify2");
 			formObj.attr("method", "get");
 			formObj.submit();
 		});
 
 		$(".btn-danger").on("click", function() {
-			formObj.attr("action", "/web/board/remove");
+			formObj.attr("action", "/Together/board/remove");
 			formObj.submit();
 		});
 
 		$(".btn-primary").on("click", function() {
-			formObj.attr("method","get");
-			formObj.attr("action","listPage");
+			formObj.attr("method", "get");
+			formObj.attr("action", "listPage");
 			formObj.submit();
 		});
 	});
@@ -59,7 +59,7 @@ hr {
 	<div id="title">
 		<label>${boardVO.title}</label>
 	</div>
-	
+
 	<div>
 		<hr>
 		<div id="content">
@@ -67,7 +67,7 @@ hr {
 		</div>
 		<hr>
 	</div>
-	
+
 	<div id="wrtier">
 		<label>${boardVO.writer}</label>
 	</div>
@@ -77,11 +77,11 @@ hr {
 		<button type="submit" class="btn btn-danger">삭제</button>
 		<button type="submit" class="btn btn-primary">목록</button>
 	</div>
-	
+
 	<form role="form" action="modifyPage" method="post">
-		<input type="hidden" name="bno" value="${boardVO.bno }">
-		<input type="hidden" name="page" value="${cri.page }">
-		<input type="hidden" name="perPageNum" value="${cri.perPageNum }">
+		<input type="hidden" name="bno" value="${boardVO.bno }"> <input
+			type="hidden" name="page" value="${cri.page }"> <input
+			type="hidden" name="perPageNum" value="${cri.perPageNum }">
 	</form>
 </body>
 </html>

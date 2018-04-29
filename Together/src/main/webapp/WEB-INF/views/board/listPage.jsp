@@ -74,8 +74,9 @@
 				<li><a
 					href="listPage${pageMaker.makeQuery(pageMaker.endPage+1)}">&raquo;</a></li>
 			</c:if>
-	
-	<input type="button" value="글쓰기" id="writing" Onclick="window.location='smartView'">
+
+			<input type="button" value="글쓰기" id="writing"
+				Onclick="window.location='smartView'">
 		</ul>
 	</div>
 	<form id="jobForm">

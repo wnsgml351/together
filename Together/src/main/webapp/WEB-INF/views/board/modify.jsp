@@ -15,7 +15,7 @@ $(document).ready(function(){
 	console.log(formObj);
 
 	$(".btn-danger").on("click", function() {
-		self.location="/web/board/listAll";
+		self.location="/Together/board/listAll";
 	});
 	
 	$(".btn-primary").on("click", function() {

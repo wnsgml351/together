@@ -9,7 +9,7 @@
 
 <!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
 <script type="text/javascript"
-	src="/web/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+	src="/Together/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
@@ -21,7 +21,7 @@
 			oAppRef : oEditors,
 			elPlaceHolder : "ir1", //textarea에서 지정한 id와 일치해야 합니다. 
 			//SmartEditor2Skin.html 파일이 존재하는 경로
-			sSkinURI : "/web/resources/editor/SmartEditor2Skin.html",
+			sSkinURI : "/Together/resources/editor/SmartEditor2Skin.html",
 			htParams : {
 				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 				bUseToolbar : true,
@@ -34,8 +34,7 @@
 			},
 			fOnAppLoad : function() {
 				//기존 저장된 내용의 text 내용을 에디터상에 뿌려주고자 할때 사용
-				oEditors.getById["ir1"].exec("PASTE_HTML",
-						[ "내용을 입력해주세요" ]);
+				oEditors.getById["ir1"].exec("PASTE_HTML", [ "내용을 입력해주세요" ]);
 			},
 			fCreator : "createSEditor2"
 		});

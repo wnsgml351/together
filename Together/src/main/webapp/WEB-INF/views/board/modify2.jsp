@@ -9,7 +9,7 @@
 
 <!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
 <script type="text/javascript"
-	src="/web/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+	src="/Together/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
@@ -22,7 +22,7 @@
 			oAppRef : oEditors,
 			elPlaceHolder : "ir1", //textarea에서 지정한 id와 일치해야 합니다. 
 			//SmartEditor2Skin.html 파일이 존재하는 경로
-			sSkinURI : "/web/resources/editor/SmartEditor2Skin.html",
+			sSkinURI : "/Together/resources/editor/SmartEditor2Skin.html",
 			htParams : {
 				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 				bUseToolbar : true,
@@ -61,7 +61,7 @@
 		console.log(formObj);
 
 		$(".btn-danger").on("click", function() {
-			self.location = "/web/board/listPage";
+			self.location = "/Together/board/listPage";
 		});
 
 		$(".btn-primary").on("click", function() {
@@ -77,17 +77,17 @@
 				<td>제목 <input type="text" id="title" name="title"
 					value="${boardVO.title}" style="width: 610px" /></td>
 			</tr>
-			
+
 			<tr>
 				<td><textarea rows="10" cols="30" id="ir1" name="content"
 						style="width: 650px; height: 350px;">${boardVO.content}</textarea></td>
 			</tr>
-			
+
 			<tr>
 				<td>작성자 <input type="text" id="writer" name="writer"
 					value="${boardVO.writer}" readonly="readonly" /></td>
 			</tr>
-			
+
 		</table>
 	</form>
 	<button type="submit" class="btn btn-primary">저장</button>
