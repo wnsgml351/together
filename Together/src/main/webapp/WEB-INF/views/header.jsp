@@ -63,7 +63,7 @@
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="service"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#service" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-boxes"></i> <span class="nav-link-text">상품 서비스</span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="service">
-					<li><a href="#">모니터링 서비스</a></li>
+					<li><a href="monitoring">모니터링 서비스</a></li>
 					<li><a href="#">상품 추천 서비스</a></li>
 					<li><a href="#">독거노인 안심 서비스</a></li>
 				</ul></li>
