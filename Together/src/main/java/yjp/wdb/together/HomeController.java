@@ -16,8 +16,7 @@ import yjp.wdb.service.LoginService;
  */
 @Controller
 public class HomeController {
-	
-	
+
 	@Inject
 	private LoginService loginService;
 
@@ -30,7 +29,7 @@ public class HomeController {
 	public void monitoring() {
 
 	}
-	
+
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login() {
 		return "login";
@@ -51,15 +50,13 @@ public class HomeController {
 			return "redirect:login";
 		}
 	}
-	
-	@RequestMapping(value="logout", method = RequestMethod.GET)
-	public String logout(HttpSession session, RedirectAttributes rttr) throws Exception{
-		
 
-		
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	public String logout(HttpSession session, RedirectAttributes rttr) throws Exception {
+
 		session.invalidate();
-		
-		
+
 		return "redirect:/";
 	}
+
 }
