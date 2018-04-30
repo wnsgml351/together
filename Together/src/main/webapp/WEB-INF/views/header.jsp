@@ -30,7 +30,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top" id="mainNav">
-	<a class="navbar-brand" href="https://aws.nocome.xyz" style="color: #868e96; font-size: 1rem;"><img src="./resources/img/Nlogo.png"><i>Network Korea</i></a>
+	<a class="navbar-brand" href="home" style="color: #868e96; font-size: 1rem;"><img src="./resources/img/Nlogo.png"><i>Network Korea</i></a>
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -57,7 +57,7 @@
 			</a>
 				<ul class="sidenav-second-level collapse" id="setting">
 					<li><a href="#">기기 등록</a></li>
-					<li><a href="#">기기 수정 / 관리</a></li>
+					<li><a href="monitoring">기기 수정 / 관리</a></li>
 				</ul></li>
 			<!--서비스-->
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="service"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#service" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-boxes"></i> <span class="nav-link-text">상품 서비스</span>

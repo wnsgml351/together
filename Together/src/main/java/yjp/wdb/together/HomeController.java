@@ -29,6 +29,11 @@ public class HomeController {
 		return "home";
 	}
 
+	@RequestMapping(value = "home", method = RequestMethod.GET)
+	public String home2() {
+		return "redirect:/";
+	}
+
 	@RequestMapping(value = "monitoring", method = RequestMethod.GET)
 	public void monitoring() {
 
