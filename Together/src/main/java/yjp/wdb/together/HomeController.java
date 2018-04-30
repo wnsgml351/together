@@ -1,5 +1,9 @@
 package yjp.wdb.together;
 
+import java.io.Closeable;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -57,6 +61,18 @@ public class HomeController {
 		session.invalidate();
 
 		return "redirect:/";
+	}
+
+	@RequestMapping(value = "test", method = RequestMethod.GET)
+	public void test() {
+		try {
+			URL url = new URL("http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
