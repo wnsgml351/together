@@ -80,4 +80,8 @@ public class HomeController {
 		}
 	}
 
+	@RequestMapping(value = "control", method = RequestMethod.GET)
+	public void control() {
+	}
+
 }

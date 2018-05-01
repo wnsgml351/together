@@ -57,7 +57,7 @@
 			</a>
 				<ul class="sidenav-second-level collapse" id="setting">
 					<li><a href="#">기기 등록</a></li>
-					<li><a href="monitoring">기기 수정 / 관리</a></li>
+					<li><a href="#">기기 수정 / 관리</a></li>
 				</ul></li>
 			<!--서비스-->
 			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="service"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#service" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-boxes"></i> <span class="nav-link-text">상품 서비스</span>
