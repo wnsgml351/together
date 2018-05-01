@@ -1,107 +1,152 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<html lang="UTF-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="author" content="">
-<link href="./resources/css/switch.css" rel="stylesheet">
-<title>Document</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<title>관리</title>
 <style>
-.card-body-icon {
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	display: none;
+}
+
+/* The slider */
+.slider {
 	position: absolute;
-	z-index: 0;
-	top: 5px !important;
-	right: -0px !important;
-	font-size: 3rem !important;
-	-webkit-transform: rotate(15deg);
-	-ms-transform: rotate(15deg);
-	transform: rotate(0deg) !important;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked+.slider {
+	background-color: #2196F3;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+p {
+	margin: 0px;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: bold;
 }
 </style>
+<script>
+	$(document)
+			.ready(
+					function() {
+						var check = $("input[type='checkbox']");
 
+						var url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1";
 
+						$.ajax({
+							url : url,
+							dataType : "json",
+							success : function(data) {
+								// alert("성공 - " + data.status);
+								if (data.status == "on") {
+									// $("p").toggle();
+									check.trigger("click");
+								}
+							}
+						});
+
+						check
+								.click(function() {
+									var command = "http://net.yjc.ac.kr:100/isocketsapi?cmd=setControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1&on=";
+									if (check.is(":checked") == true) {
+										$.ajax({
+											url : command + "1",
+											dataType : "json",
+											success : function(data) {
+												if (data.result == "success") {
+													alert("성공");
+												} else {
+													alert("실패1");
+												}
+											},
+											error : function(data) {
+												alert("실패");
+											}
+										});
+										// isocketsapi?cmd=setControlPortStatus&devid=디바이스번호&port=포트번호&on=[0/1]
+									} else {
+										$.ajax({
+											url : command + "0",
+											dataType : "json",
+											success : function(data) {
+												if (data.result == "success") {
+													alert("성공");
+												} else {
+													alert("실패1");
+												}
+
+											},
+											error : function(data) {
+												alert("실패");
+											}
+										});
+									}
+									$("p").toggle();
+
+								});
+					});
+</script>
 </head>
-<body class="fixed-nav sticky-footer bg-light" id="page-top">
-
+<body>
 	<div>
 		<jsp:include page="header.jsp" flush="false" />
 	</div>
-
-	<div class="content-wrapper">
-		<div class="container-fluid">
-			<!--모니터링 서비스-->
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#">모니터링 서비스</a></li>
-				<li class="breadcrumb-item active">전력제어(원격 시스템)</li>
-			</ol>
-
-
-
-			<div class="row">
-				<!--총 사용량(한달)-->
-				<div class="col-xl-12 col-sm-6 mb-3">
-					<div class="card text-dark o-hidden h-100"
-						style="background-color: light;">
-						<div class="card-header">
-							<i class="fa fa-bolt"></i> 1번 콘센트 (IoT 스마트 PDU 5구형)
-						</div>
-						<div class="card-body">
-							<div class="mr-5">
-
-								<!-- 1번수구 -->
-								<div class="switch_1">
-									<input type="checkbox" name="switch1" class="switch1-checkbox"
-										id="myonoffswitch" checked> <label
-										class="switch1-label" for="myonoffswitch"
-										style="margin-bottom: 0px;"> <span
-										class="switch1-inner"></span>
-									</label>
-								</div>
-
-							</div>
-						</div>
-						<a class="card-footer text-white clearfix small z-1" href="#">
-
-						</a>
-					</div>
-				</div>
-
-			</div>
-
-
-
-		</div>
-
-		<footer class="sticky-footer" style="height: 62px; line-height: 62px;">
-			<div class="container">
-				<div class="text-center">
-					<small>열심히 하자</small>
-				</div>
-			</div>
-		</footer>
-
-		<!-- 맨 위로 가기-->
-		<a class="scroll-to-top rounded" href="#page-top"> <i
-			class="fa fa-angle-up"></i>
-		</a>
-
-		<div>
-			<jsp:include page="login.jsp" flush="false" />
-		</div>
+	<div class="jumbotron">
+		<label class="switch"> <input type="checkbox" id="checkbox"> <span class="slider round"></span>
+		</label>
+		<p>OFF</p>
+		<p style="display: none;">ON</p>
 	</div>
 
-	<!-- Page level plugin JavaScript-->
-	<script src="./resources/vendor/chart.js/Chart.min.js"></script>
-	<!-- Custom scripts for this page-->
-	<script src="./resources/js/sb-admin-charts.min.js"></script>
 
 </body>
 </html>
