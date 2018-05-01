@@ -14,12 +14,17 @@ public class TogetherDAOImpl implements TogetherDAO {
 
 	@Inject
 	private SqlSession session;
-	
+
 	private final static String NAMESPACE = "yjp.wdb.together.sqlMapper";
 
 	@Override
 	public List<ElecData> getAllData() throws Exception {
 		return session.selectList(NAMESPACE + ".getAllData");
+	}
+
+	@Override
+	public void insertData(ElecData e) throws Exception {
+		session.insert(NAMESPACE + ".insertData", e);
 	}
 
 }

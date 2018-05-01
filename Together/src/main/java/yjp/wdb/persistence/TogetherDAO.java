@@ -6,4 +6,6 @@ import yjp.wdb.domain.ElecData;
 
 public interface TogetherDAO {
 	public List<ElecData> getAllData() throws Exception;
+	
+	public void insertData(ElecData e) throws Exception;
 }

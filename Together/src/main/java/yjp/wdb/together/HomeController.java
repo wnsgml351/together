@@ -67,6 +67,7 @@ public class HomeController {
 
 		return "redirect:/";
 	}
+	/*
 
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public void test() {
@@ -79,6 +80,7 @@ public class HomeController {
 			e.printStackTrace();
 		}
 	}
+	*/
 
 	@RequestMapping(value = "control", method = RequestMethod.GET)
 	public void control() {
