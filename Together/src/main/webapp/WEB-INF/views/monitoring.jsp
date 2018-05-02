@@ -11,6 +11,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="author" content="">
+
+<!-- 라벨(마진) 등등 등 -->
+<link href="./resources/css/position.css" rel="stylesheet">
 <title>Document</title>
 
 <style>
@@ -122,7 +125,19 @@
 					<div class="card-body">
 						<canvas id="myAreaChart" width="100%" height="30"></canvas>
 					</div>
-					<div class="card-footer small text-muted">최신 업데이트 - 13:00 PM</div>
+					<div class="card-footer small text-muted">
+						최신 업데이트 - 13:00 PM
+
+						<div class="pull-right" style="display: inline-block;">
+
+							<label class="label-margin" id="year">연별</label> <label
+								class="label-margin" id="month">월별</label> <label
+								class="label-margin" id="week">주별</label> <label
+								class="label-margin" id="day">일별</label>
+
+						</div>
+
+					</div>
 				</div>
 			</div>
 

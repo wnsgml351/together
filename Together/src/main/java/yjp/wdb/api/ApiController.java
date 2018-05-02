@@ -1,5 +1,8 @@
 package yjp.wdb.api;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,4 +25,22 @@ public class ApiController {
 		List<ElecData> list = service.getAllData();
 		return list;
 	}
+
+	@RequestMapping(value = "getThisMonthSumData", method = RequestMethod.GET)
+	public Double getThisMonthSumData() throws Exception {
+		Calendar c = Calendar.getInstance();
+
+		yjp.wdb.domain.Date date = new yjp.wdb.domain.Date();
+
+		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
+		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
+
+		System.out.println(start + " = " + end);
+
+		date.setStartDate(start);
+		date.setEndDate(end);
+
+		return service.getThisMonthSumData(date);
+	}
+
 }

@@ -1,0 +1,9 @@
+.label-margin{
+	margin-left:20px;
+	cursor: pointer;
+	margin-bottom:0px;
+}
+
+.label-margin:hover{
+	color:rgb(0,123,255);
+}

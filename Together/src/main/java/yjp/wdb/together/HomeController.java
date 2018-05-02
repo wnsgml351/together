@@ -1,9 +1,5 @@
 package yjp.wdb.together;
 
-import java.io.Closeable;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -12,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import yjp.wdb.domain.Date;
 import yjp.wdb.domain.Login;
 import yjp.wdb.service.LoginService;
+import yjp.wdb.service.TestService;
 
 /**
  * Handles requests for the application home page.
@@ -23,6 +21,9 @@ public class HomeController {
 
 	@Inject
 	private LoginService loginService;
+
+	@Inject
+	private TestService testService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -67,20 +68,6 @@ public class HomeController {
 
 		return "redirect:/";
 	}
-	/*
-
-	@RequestMapping(value = "test", method = RequestMethod.GET)
-	public void test() {
-		try {
-			URL url = new URL("http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1");
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Accept", "application/json");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	*/
 
 	@RequestMapping(value = "control", method = RequestMethod.GET)
 	public void control() {
