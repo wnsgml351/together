@@ -97,7 +97,7 @@
 				<ul class="sidenav-second-level collapse" id="service">
 					<li><a href="monitoring">모니터링 서비스</a></li>
 					<li><a href="#">상품 추천 서비스</a></li>
-					<li><a href="#">독거노인 안심 서비스</a></li>
+					<li><a href="ansim">독거노인 안심 서비스</a></li>
 				</ul></li>
 			<!--고객지원-->
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
