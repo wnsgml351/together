@@ -16,7 +16,7 @@ public class RegisterDAOImpl implements RegisterDAO {
 
 	@Inject
 	private SqlSession session;
-	private static final String NAMESPACE = "yjc.wdb.mapper.RegisterMapper";
+	private static final String NAMESPACE = "yjp.wdb.together.RegisterMapper";
 
 	@Override
 	public void insert(Register register) throws Exception {

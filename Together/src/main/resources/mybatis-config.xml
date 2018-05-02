@@ -7,5 +7,9 @@
 		<typeAlias alias="ElecData" type="yjp.wdb.domain.ElecData" />
 		<typeAlias alias="Login" type="yjp.wdb.domain.Login" />
 		<typeAlias alias="BoardVO" type="yjp.wdb.domain.BoardVO" />
+		<typeAlias alias="Login" type="yjp.wdb.domain.Login" />
+		<typeAlias alias="Register" type="yjp.wdb.domain.Register" />
+		<typeAlias alias="Building" type="yjp.wdb.domain.Building" />
+		<typeAlias alias="Groups" type="yjp.wdb.domain.Groups" />
 	</typeAliases>
 </configuration>
