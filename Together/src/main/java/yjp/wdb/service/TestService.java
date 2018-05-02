@@ -29,7 +29,7 @@ public class TestService {
 
 	// private final static int DELAY = 2500;
 
-	@Scheduled(fixedDelay = 25000)
+	// @Scheduled(fixedDelay = 25000)
 	public void TestSchedular() {
 		// System.out.println("테스트");
 		/*
