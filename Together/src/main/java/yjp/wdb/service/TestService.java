@@ -16,14 +16,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import yjp.wdb.domain.Date;
 import yjp.wdb.domain.ElecData;
 import yjp.wdb.persistence.TogetherDAO;
+import yjp.wdb.persistence.testDAO;
 
 @Service
 public class TestService {
 
 	@Inject
 	private TogetherDAO dao;
+
+	@Inject
+	private testDAO testDAO;
 
 	BufferedReader in = null;
 
@@ -66,7 +71,7 @@ public class TestService {
 						System.out.println("야스야스오");
 					}
 					System.out.println("야스");
-					
+
 					dao.insertData(e);
 				}
 			}
@@ -83,5 +88,7 @@ public class TestService {
 
 		return (int) Double.parseDouble(o.toString());
 	}
+
+	
 
 }

@@ -36,7 +36,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top"
 	id="mainNav">
-	<a class="navbar-brand" href="/"
+	<a class="navbar-brand" href="home"
 		style="color: #868e96; font-size: 1rem;"><img
 		src="./resources/img/PMHlogo1.png"><i>PowerManagerHome</i></a>
 	<button class="navbar-toggler navbar-toggler-right" type="button"
