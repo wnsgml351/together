@@ -1,0 +1,56 @@
+.switch_1{
+    width: 150px;
+    line-height: 150px;
+    border-radius: 150px 150px;
+    border: 2px solid teal;
+    text-align: center;
+    float: left;
+    margin-left: 55px;
+}
+
+/*1번 수구*/
+.switch1-checkbox{
+    display: none;
+}
+
+.switch1-label{
+    display: block;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.switch1-inner {
+    display: block; width: 200%; margin-left: -100%;
+}
+
+.switch1-inner::before, .switch1-inner::after{
+    display: block; 
+    float: left; 
+    width: 50%; 
+    font-size: 14px; 
+    color: #343a40;
+    font-weight: bold; 
+    box-sizing: border-box;
+}
+
+.switch1-inner::before{
+    content: "OFF";
+    text-align: center;
+}
+
+.switch1-inner::after {
+    content: "ON";
+    background-color: rgb(154,203,49);
+    color: snow;
+    text-align: center;
+    border-radius: 150px 150px;
+}
+
+
+.switch1-checkbox:checked + .switch1-label .switch1-inner {
+    margin-left: 0;
+}
+.switch1-checkbox:checked + .switch1-label .switch1-inner {
+    margin-left: 0;
+}
+
