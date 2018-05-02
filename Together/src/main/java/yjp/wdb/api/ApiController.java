@@ -1,8 +1,6 @@
 package yjp.wdb.api;
 
-import java.sql.Timestamp;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -32,7 +30,8 @@ public class ApiController {
 
 		yjp.wdb.domain.Date date = new yjp.wdb.domain.Date();
 
-		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
+		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1)
+				+ "-1";
 		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
 
 		System.out.println(start + " = " + end);
