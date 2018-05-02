@@ -84,8 +84,8 @@
 					<span class="nav-link-text">기기등록 / 관리</span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="setting">
-					<li><a href="#">기기 등록</a></li>
-					<li><a href="control">기기 수정 / 관리</a></li>
+					<li><a href="buildingRegister">그룹 등록</a></li>
+					<li><a href="groupList">그룹 수정 / 관리</a></li>
 				</ul></li>
 			<!--서비스-->
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
