@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.inject.Inject;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,14 +16,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import yjp.wdb.domain.ElecData;
+import yjp.wdb.persistence.TogetherDAO;
+
 @Service
 public class TestService {
+
+	@Inject
+	private TogetherDAO dao;
 
 	BufferedReader in = null;
 
 	// private final static int DELAY = 2500;
 
-	@Scheduled(fixedDelay = 25000)
+	// @Scheduled(fixedDelay = 25000)
 	public void TestSchedular() {
 		// System.out.println("테스트");
 		/*
@@ -45,7 +53,22 @@ public class TestService {
 
 			for (int i = 0; i < jArray.size(); i++) {
 				JSONObject jObj = (JSONObject) jArray.get(i);
-				System.out.println(jObj.get("paramValue"));
+				if (jObj.get("paramUnit").equals("W")) {
+					ElecData e = new ElecData();
+					System.out.println(jObj.get("paramValue"));
+
+					try {
+						int v = convertValue(jObj.get("paramValue"));
+						System.out.println(convertValue(jObj.get("paramValue")));
+						e.setTitle("data");
+						e.setWatt(v);
+					} catch (NumberFormatException ne) {
+						System.out.println("야스야스오");
+					}
+					System.out.println("야스");
+					
+					dao.insertData(e);
+				}
 			}
 
 			System.out.println("====================");
@@ -54,6 +77,11 @@ public class TestService {
 		}
 
 		// Object obj = parser.parse(in)
+	}
+
+	private int convertValue(Object o) {
+
+		return (int) Double.parseDouble(o.toString());
 	}
 
 }

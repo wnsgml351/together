@@ -6,10 +6,14 @@
 	<select id="getAllData" resultType="ElecData">
 		select * from data
 	</select>
-	
+
 	<select id="select" resultType="Login">
 		select id, password from user
 		where id = #{id} and password = #{password}
 	</select>
-	
+
+	<insert id="insertData">
+		insert into data values(#{title}, #{watt}, now())
+	</insert>
+
 </mapper>
