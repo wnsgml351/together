@@ -12,6 +12,7 @@
 			<div class="chartAreaWrapper">
 				<canvas id="myAreaChart" width="100%" height="30"></canvas>
 			</div>
+			<canvas id="myAreaChart2" width="100%" height="30"></canvas>
 		</div>
 		<div class="card-footer small text-muted">최신 업데이트 - 13:00 PM</div>
 	</div>

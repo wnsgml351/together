@@ -12,7 +12,7 @@
 				<div class="card-body text-center">
 					<h6>04.01 ~ 04.20</h6>
 					<p>
-					<h1>356kWh</h1>
+					<h1 id="sum">356kWh</h1>
 					</p>
 					<p style="font-size: 12px;">
 						전 월 평균 보다 24kWh 많이 <br> 사용중입니다.
