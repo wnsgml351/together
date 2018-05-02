@@ -25,7 +25,7 @@
 						<label for="exampleInputPassword1">Password</label> <input
 							class="form-control" id="password" name="password" type="password"
 							placeholder="Password"><br>
-						<div id="message-id"></div>
+						<div id="message-password"></div>
 					</div>
 					<button class="btn btn-primary btn-block" id="login-btn">Login</button>
 				</form>

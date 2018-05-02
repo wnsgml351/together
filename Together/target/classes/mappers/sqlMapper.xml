@@ -17,7 +17,10 @@
 	</insert>
 
 	<select id="getThisMonthSumData" resultType="double">
-		select sum(watt)/1000 from data where reg_date between timestamp(#{startDate}) and timestamp(#{endDate})
+		select
+		sum(watt)/1000 from data where reg_date between
+		timestamp(#{startDate}) and timestamp(#{endDate})
 	</select>
+
 
 </mapper>

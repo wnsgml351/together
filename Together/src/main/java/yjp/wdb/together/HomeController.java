@@ -1,14 +1,19 @@
 package yjp.wdb.together;
 
+import java.text.SimpleDateFormat;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import yjp.wdb.domain.Date;
+
 import yjp.wdb.domain.Login;
 import yjp.wdb.service.LoginService;
 import yjp.wdb.service.TestService;
@@ -24,6 +29,7 @@ public class HomeController {
 
 	@Inject
 	private TestService testService;
+	
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
@@ -72,5 +78,7 @@ public class HomeController {
 	@RequestMapping(value = "control", method = RequestMethod.GET)
 	public void control() {
 	}
+	
+	
 
 }
