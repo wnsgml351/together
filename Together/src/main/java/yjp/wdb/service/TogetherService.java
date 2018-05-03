@@ -7,6 +7,6 @@ import yjp.wdb.domain.ElecData;
 
 public interface TogetherService {
 	public List<ElecData> getAllData() throws Exception;
-	
+
 	public Double getThisMonthSumData(Date d) throws Exception;
 }

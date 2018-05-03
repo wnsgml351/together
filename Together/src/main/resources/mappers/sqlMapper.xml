@@ -22,5 +22,52 @@
 		timestamp(#{startDate}) and timestamp(#{endDate})
 	</select>
 
+	<!-- 여기서부터 안심서비스 데이터 -->
+	<!-- 전월 -->
+	<select id="dataMonth" resultType="ElecData">
+
+<![CDATA[select DATE_FORMAT(reg_date, '%m') mm
+             , avg(watt) watt
+          from data
+         where reg_date >= '2018-01-01'and reg_date < '2019-01-01'
+         group by DATE_FORMAT(reg_date, '%m')]]>
+
+	</select>
+	<!-- 5월데이터 -->
+	<select id="ansim" resultType="ElecData">
+<![CDATA[select DATE_FORMAT(reg_date, '%m') mm
+             , avg(watt) watt
+          from data
+         where reg_date >= '2018-05-01'and reg_date < '2018-06-01'
+         group by DATE_FORMAT(reg_date, '%m')]]>
+
+	</select>
+	<!-- 4월데이터 -->
+	<select id="ansimAll" resultType="ElecData">
+<![CDATA[select DATE_FORMAT(reg_date, '%m') mm
+             , avg(watt) watt
+          from data
+         where reg_date >= '2018-04-01'and reg_date < '2018-05-01'
+         group by DATE_FORMAT(reg_date, '%m')]]>
+	</select>
+
+	<!-- day -->
+	<select id="ansimdayAll" resultType="ElecData">
+<![CDATA[select DATE_FORMAT(reg_date, '%d') dd
+             , avg(watt) watt
+          from data
+         where reg_date >= '2018-04-01'and reg_date < '2018-05-01'
+         group by DATE_FORMAT(reg_date, '%d')
+   ]]>
+	</select>
+	<select id="ansimdayLast" resultType="ElecData">
+<![CDATA[select DATE_FORMAT(reg_date, '%d') dd
+             , avg(watt) watt
+          from data
+         where reg_date = '2018-04-30'
+         group by DATE_FORMAT(reg_date, '%d')
+   ]]>
+	</select>
+
 
 </mapper>

@@ -13,7 +13,7 @@ public class LoginDAOImpl implements LoginDAO {
 	@Inject
 	private SqlSession session;
 
-	private final static String NAMESPACE = "yjc.wdb.mapper.Login";
+	private final static String NAMESPACE = "yjp.wdb.together.sqlMapper";
 
 	@Override
 	public Login login(Login login) throws Exception {

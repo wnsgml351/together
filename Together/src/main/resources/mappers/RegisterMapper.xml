@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="yjp.wdb.together.RegisterMapper">
+	  <insert id="insert">
+	  	insert into user(id,password,name)
+	  	values (#{id},#{password},#{name})
+	  </insert>
+	  
+	  <select id="confirmId" resultType="Register">
+	  	select * from user where id=#{id}
+	  </select>
+	
+	   <!-- 내가 수정 -->
+	  <insert id="insertAdd">
+	  	insert into building(b_category,b_name,b_address,id)
+	  	values (#{b_category},#{b_name},#{b_address},#{id})
+	  </insert>
+		
+	  <!-- 내가 수정 -->
+	  <select id="rootInfo" resultType="Groups">
+	  	select * from groups where id=#{id} and selectType=#{selectType}
+	  </select>
+	
+  </mapper>

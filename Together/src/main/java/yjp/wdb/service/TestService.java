@@ -1,22 +1,15 @@
 package yjp.wdb.service;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import javax.inject.Inject;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.springframework.http.HttpEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import yjp.wdb.domain.Date;
 import yjp.wdb.domain.ElecData;
 import yjp.wdb.persistence.TogetherDAO;
 import yjp.wdb.persistence.testDAO;
@@ -38,13 +31,18 @@ public class TestService {
 	public void TestSchedular() {
 		// System.out.println("테스트");
 		/*
-		 * try { URL obj = new URL("http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1"); HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		 * try { URL obj = new URL(
+		 * "http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1"
+		 * ); HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		 * 
-		 * con.setRequestMethod("GET"); in = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+		 * con.setRequestMethod("GET"); in = new BufferedReader(new
+		 * InputStreamReader(con.getInputStream(), "UTF-8"));
 		 * 
-		 * String line; while ((line = in.readLine()) != null) { System.out.println(line); }
+		 * String line; while ((line = in.readLine()) != null) {
+		 * System.out.println(line); }
 		 * 
-		 * } catch (Exception e) { e.printStackTrace(); } finally { if (in != null) { try { in.close(); } catch (Exception e) { e.printStackTrace(); } } }
+		 * } catch (Exception e) { e.printStackTrace(); } finally { if (in != null) {
+		 * try { in.close(); } catch (Exception e) { e.printStackTrace(); } } }
 		 */
 		String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1";
 		RestTemplate template = new RestTemplate();
@@ -88,7 +86,5 @@ public class TestService {
 
 		return (int) Double.parseDouble(o.toString());
 	}
-
-	
 
 }
