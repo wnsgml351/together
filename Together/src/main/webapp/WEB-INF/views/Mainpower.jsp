@@ -10,7 +10,7 @@
 					<i class="fa fa-bolt"></i> 현재 전력 소비량
 				</div>
 				<div class="card-body text-center">
-					<h6>04.01 ~ 04.20</h6>
+					<h6>05.01 ~ 05.31</h6>
 					<p>
 					<h1 id="sum">356kWh</h1>
 					</p>

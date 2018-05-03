@@ -62,6 +62,10 @@
 						차트</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				title="Charts"><a class="nav-link" href="control"> <i
+					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">원격제어</span>
+			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
 				title="Charts"><a class="nav-link" href="board/listPage"> <i
 					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">게시판</span>
 			</a></li>
@@ -97,7 +101,7 @@
 				<ul class="sidenav-second-level collapse" id="service">
 					<li><a href="monitoring">모니터링 서비스</a></li>
 					<li><a href="#">상품 추천 서비스</a></li>
-					<li><a href="ansim">독거노인 안심 서비스</a></li>
+					<li><a href="ansimMonth">독거노인 안심 서비스</a></li>
 				</ul></li>
 			<!--고객지원-->
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
