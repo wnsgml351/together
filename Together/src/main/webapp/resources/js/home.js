@@ -1,14 +1,8 @@
 	$(document).ready(function(){
 		
-		$.ajax({
-			url:"getThisMonthSumData",
-			success: function(data){
-				$("#sum").text(data + "kWh");
-			},
-			error: function(){
-				alert("실패");
-			}
-		});
+		changeData();
+		setInterval(changeData, 25 * 1000);
+		
 		var chart = $("#myAreaChart")[0];
 		chart.getContext("2d");
 		
@@ -61,6 +55,19 @@
 			}
 		});
 	});
+	
+	function changeData(){
+		$.ajax({
+			url:"getThisMonthSumData",
+			success: function(data){
+				console.log(data);
+				$("#sum").text(data + "kWh");
+			},
+			error: function(){
+				alert("실패");
+			}
+		});
+	}
 	
 	function insertData(myChart, arr){
 		var len = Object.keys(arr).length;
