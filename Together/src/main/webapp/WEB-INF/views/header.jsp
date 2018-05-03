@@ -187,17 +187,7 @@
 						</a>
 					</div></li>
 				<li class="nav-item">
-					<form class="form-inline my-2 my-lg-0 mr-lg-2">
-						<div class="input-group">
-							<input class="form-control" type="text"
-								placeholder="Search for..."> <span
-								class="input-group-append">
-								<button class="btn btn-primary" type="button">
-									<i class="fa fa-search"></i>
-								</button>
-							</span>
-						</div>
-					</form>
+					<a class="nav-link" style="color:#868e96;"> ${login.id }님 반갑습니다.</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="logout"
 					style="color: #868e96;"> <i class="fa fa-fw fa-sign-out"
