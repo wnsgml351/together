@@ -127,8 +127,13 @@
 							<div class="dropdown-message small">안심 서비스가 등록되었습니다.</div>
 						</a>
 					</div></li>
-				<li class="nav-item"><a class="nav-link" style="color: #868e96;"> ${login.id }님 반갑습니다.</a></li>
-				<li class="nav-item"><a class="nav-link" href="logout" style="color: #868e96;"> <i class="fa fa-fw fa-sign-out" style="color: #868e96;"></i>로그아웃
+
+				<li class="nav-item">
+					<a class="nav-link" style="color:#868e96;"> ${login.id }님 반갑습니다.</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="logout"
+					style="color: #868e96;"> <i class="fa fa-fw fa-sign-out"
+						style="color: #868e96;"></i>로그아웃
 				</a></li>
 			</ul>
 		</c:if>
