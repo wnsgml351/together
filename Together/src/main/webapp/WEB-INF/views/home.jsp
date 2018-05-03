@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+<script src="./resources/vendor/chart.js/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="./resources/js/home.js"></script>
 
@@ -48,7 +48,7 @@
 
 	</div>
 
-	<script src="./resources/vendor/chart.js/Chart.min.js"></script>
+
 
 </body>
 </html>
