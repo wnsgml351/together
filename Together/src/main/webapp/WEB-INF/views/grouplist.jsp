@@ -17,11 +17,9 @@
 	$(document).ready(function(){
 		var user=$("#userid").val();
 		
-		//alert("user넘오온거:"+user);
 		$("#super").click(function(){
 			//window.location="Rregister";
 			var SelectType=$("#super").val();
-			alert('클릭'+SelectType);
 			$('.roomClick').empty();
 			$.ajax({
 				url:"rootCheck",
@@ -31,7 +29,6 @@
 				},
 				dataType:'json',
 				success:function(data){
-					//alert('성공'+data.today);
 					$('.test').empty();
 					var item=$('<div></div>').addClass('item');
 					var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -46,7 +43,6 @@
 		
 		$("#sub1").click(function(){
 			var SelectType=$("#sub1").val();
-			alert('클릭'+SelectType);
 			$('.roomClick').empty();
 			$.ajax({
 				url:"rootCheck",
@@ -56,7 +52,6 @@
 				},
 				dataType:'json',
 				success:function(data){
-					//alert('성공'+data.today);
 					$('.test').empty();
 					var item=$('<div></div>').addClass('item');
 					var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -70,7 +65,6 @@
 		
 		$("#sub2").click(function(){
 			var SelectType=$("#sub2").val();
-			alert('클릭'+SelectType);
 			$('.roomClick').empty();
 			$.ajax({
 				url:"rootCheck",
@@ -80,7 +74,6 @@
 				},
 				dataType:'json',
 				success:function(data){
-					//alert('성공'+data.today);
 					$('.test').empty();
 					var item=$('<div></div>').addClass('item');
 					var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -94,8 +87,6 @@
 		
 		$("#sub3").click(function(){
 			var SelectType=$("#sub3").val();
-			alert('클릭'+SelectType);
-			
 			$.ajax({
 				url:"rootCheck",
 				data:{
@@ -104,7 +95,6 @@
 				},
 				dataType:'json',
 				success:function(data){
-					//alert('성공'+data.today);
 					$('.test').empty();
 					$('.roomClick').empty();
 					var item=$('<div></div>').addClass('item');
@@ -121,7 +111,6 @@
 					
 					$("#consent1").click(function(){
 						var SelectType=$("#consent1").val();
-						alert('클릭'+SelectType);
 						//$('.roomClick').empty();
 						$.ajax({
 							url:"rootCheck",
@@ -131,7 +120,6 @@
 							},
 							dataType:'json',
 							success:function(data){
-								//alert('성공'+data.today);
 								$('.test').empty();
 								var item=$('<div></div>').addClass('item');
 								var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -144,7 +132,6 @@
 					});
 					$("#consent2").click(function(){
 						var SelectType=$("#consent2").val();
-						alert('클릭'+SelectType);
 						//$('.roomClick').empty();
 						$.ajax({
 							url:"rootCheck",
@@ -154,7 +141,6 @@
 							},
 							dataType:'json',
 							success:function(data){
-								//alert('성공'+data.today);
 								$('.test').empty();
 								var item=$('<div></div>').addClass('item');
 								var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -167,7 +153,6 @@
 					});
 					$("#consent3").click(function(){
 						var SelectType=$("#consent3").val();
-						alert('클릭'+SelectType);
 						//$('.roomClick').empty();
 						$.ajax({
 							url:"rootCheck",
@@ -177,7 +162,6 @@
 							},
 							dataType:'json',
 							success:function(data){
-								//alert('성공'+data.today);
 								$('.test').empty();
 								var item=$('<div></div>').addClass('item');
 								var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);
@@ -190,7 +174,6 @@
 					});
 					$("#consent4").click(function(){
 						var SelectType=$("#consent4").val();
-						alert('클릭'+SelectType);
 						//$('.roomClick').empty();
 						$.ajax({
 							url:"rootCheck",
@@ -200,7 +183,6 @@
 							},
 							dataType:'json',
 							success:function(data){
-								//alert('성공'+data.today);
 								$('.test').empty();
 								var item=$('<div></div>').addClass('item');
 								var itemText1=$('<p></p>').text('해당 사용자의 이번달 사용량:'+data.total).appendTo(item);

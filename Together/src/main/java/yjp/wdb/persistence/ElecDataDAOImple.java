@@ -35,8 +35,6 @@ public class ElecDataDAOImple implements ElecDataDAO {
 
 	@Override
 	public List<List<ElecData>> ansim() throws Exception {
-		/*String timeStamp = new SimpleDateFormat("yyyy.MM.dd").format(new Date());
-		*/
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
 		Calendar cal = Calendar.getInstance();
 		cal.add(cal.MONTH, 0);
@@ -44,12 +42,6 @@ public class ElecDataDAOImple implements ElecDataDAO {
 		System.out.println(currentMonth);
 		List<List<ElecData>> list = new ArrayList<>();
 		list.add(session.selectList(NAMESPACE + ".ansim", currentMonth));
-		//3�썡
-		/*cal.add(cal.MONTH, -1);
-		String beforeMonth = dateFormat.format(cal.getTime());
-		System.out.println(beforeMonth);
-		list.add(session.selectList(NAMESPACE + ".ansim", beforeMonth));*/
-		//4�썡
 		System.out.println(list);
 		return list;
 	}
@@ -60,13 +52,10 @@ public class ElecDataDAOImple implements ElecDataDAO {
 		list.add(session.selectList(NAMESPACE + ".ansimAll"));
 		return list;
 	}
-	/*@Override
-	public List<List<ElecData>> ansima() throws Exception {
-		List<List<ElecData>> list = new ArrayList<>();
-		list.add(session.selectList(NAMESPACE + ".ansimA"));
-		return list;
-	}*/
-	
+	/*
+	 * @Override public List<List<ElecData>> ansima() throws Exception { List<List<ElecData>> list = new ArrayList<>(); list.add(session.selectList(NAMESPACE + ".ansimA")); return list; }
+	 */
+
 	@Override
 	public List<ElecData> dataMonth() throws Exception {
 		return session.selectList(NAMESPACE + ".dataMonth");
@@ -85,6 +74,5 @@ public class ElecDataDAOImple implements ElecDataDAO {
 		//4�썡 30�씪 �뜲�씠�꽣
 		return list;
 	}
-	
 
 }

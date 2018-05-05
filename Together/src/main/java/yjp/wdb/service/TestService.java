@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -27,7 +28,7 @@ public class TestService {
 
 	// private final static int DELAY = 2500;
 
-	// @Scheduled(fixedDelay = 25000)
+	@Scheduled(fixedDelay = 25000)
 	public void TestSchedular() {
 		// System.out.println("테스트");
 		/*
