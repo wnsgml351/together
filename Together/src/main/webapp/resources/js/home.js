@@ -24,7 +24,7 @@
 		
 
 		var myChart = new Chart(chart, {
-			type: 'line',
+			type: 'bar',
 			data: cData,
 			option: cOption		
 		});

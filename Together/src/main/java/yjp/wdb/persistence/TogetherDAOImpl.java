@@ -1,5 +1,8 @@
 package yjp.wdb.persistence;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,6 +39,20 @@ public class TogetherDAOImpl implements TogetherDAO {
 		}
 		System.out.println(dou);
 		return session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
+	}
+
+	public List<ElecData> getRecent12H() throws Exception {
+
+		Calendar c = Calendar.getInstance();
+		long end = c.getTimeInMillis() + ((60 - c.get(Calendar.MINUTE)) * 60 * 1000);
+		long start = end - (12 * 60 * 60 * 1000);
+
+		Date d = new Date();
+		d.setStartLongDate(start);
+		d.setEndLongDate(end);
+
+		//  + (60 - c.get(Calendar.MINUTE) * 1000)
+		return session.selectList(NAMESPACE + ".getRecent12H", d);
 	}
 
 }

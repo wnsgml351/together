@@ -19,7 +19,12 @@
 	<select id="getThisMonthSumData" resultType="double">
 		select
 		sum(watt)/1000 from data where reg_date between
-		timestamp(#{startDate}) and timestamp(#{endDate})
+		timestamp(#{startDate}) and timestamp(#{endLongDate})
+	</select>
+
+	<select id="getRecent12H" resultType="ElecData">
+		select title, watt, reg_date from data where reg_date between
+		FROM_UNIXTIME(#{startLongDate}) and FROM_UNIXTIME(#{endDate})
 	</select>
 
 	<!-- 여기서부터 안심서비스 데이터 -->

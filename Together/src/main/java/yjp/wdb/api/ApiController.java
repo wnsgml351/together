@@ -23,6 +23,12 @@ public class ApiController {
 		List<ElecData> list = service.getAllData();
 		return list;
 	}
+	
+	@RequestMapping(value="getRecent12H", method=RequestMethod.GET)
+	public List<ElecData> getRecent12H() throws Exception{
+		List<ElecData> list = service.getRecent12H();
+		return list;
+	}
 
 	@RequestMapping(value = "getThisMonthSumData", method = RequestMethod.GET)
 	public Double getThisMonthSumData() throws Exception {
@@ -41,5 +47,5 @@ public class ApiController {
 
 		return service.getThisMonthSumData(date);
 	}
-
+	
 }
