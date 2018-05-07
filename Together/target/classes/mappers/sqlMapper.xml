@@ -23,8 +23,8 @@
 	</select>
 
 	<select id="getRecent12H" resultType="ElecData">
-		select title, watt, reg_date from data where reg_date between
-		FROM_UNIXTIME(#{startLongDate}) and FROM_UNIXTIME(#{endDate})
+		select * from data where reg_date between
+		FROM_UNIXTIME(#{startLongDate}) and FROM_UNIXTIME(#{endLongDate})
 	</select>
 
 	<!-- 여기서부터 안심서비스 데이터 -->

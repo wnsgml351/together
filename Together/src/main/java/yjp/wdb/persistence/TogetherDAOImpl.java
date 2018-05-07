@@ -47,6 +47,11 @@ public class TogetherDAOImpl implements TogetherDAO {
 		long end = c.getTimeInMillis() + ((60 - c.get(Calendar.MINUTE)) * 60 * 1000);
 		long start = end - (12 * 60 * 60 * 1000);
 
+		start /= 1000;
+		end /= 1000;
+
+		System.out.println(start + " - " + end);
+
 		Date d = new Date();
 		d.setStartLongDate(start);
 		d.setEndLongDate(end);
