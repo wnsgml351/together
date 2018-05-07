@@ -25,4 +25,9 @@ public class TogetherServiceImpl implements TogetherService {
 	public Double getThisMonthSumData(Date d) throws Exception {
 		return dao.getThisMonthSumData(d);
 	}
+
+	@Override
+	public List<ElecData> getRecent12H() throws Exception {
+		return dao.getRecent12H();
+	}
 }

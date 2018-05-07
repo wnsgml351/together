@@ -7,8 +7,10 @@ import yjp.wdb.domain.ElecData;
 
 public interface TogetherDAO {
 	public List<ElecData> getAllData() throws Exception;
-	
+
 	public void insertData(ElecData e) throws Exception;
-	
+
 	public Double getThisMonthSumData(Date d) throws Exception;
+
+	public List<ElecData> getRecent12H() throws Exception;
 }

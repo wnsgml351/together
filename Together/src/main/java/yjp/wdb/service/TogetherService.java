@@ -9,4 +9,6 @@ public interface TogetherService {
 	public List<ElecData> getAllData() throws Exception;
 
 	public Double getThisMonthSumData(Date d) throws Exception;
+
+	public List<ElecData> getRecent12H() throws Exception;
 }
