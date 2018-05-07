@@ -25,11 +25,11 @@
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<div>
-				<jsp:include page="mainpower.jsp" flush="false" />
+				<jsp:include page="Mainpower.jsp" flush="false" />
 			</div>
 
 			<div>
-				<jsp:include page="mainchart.jsp" flush="false" />
+				<jsp:include page="Mainchart.jsp" flush="false" />
 			</div>
 
 			<div>
