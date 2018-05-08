@@ -34,12 +34,11 @@ public class TogetherDAOImpl implements TogetherDAO {
 
 	@Override
 	public Double getThisMonthSumData(Date d) throws Exception {
-		Double dou = session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
-		if (dou == null) {
-			dou = 0.0;
+		Double result = session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
+		if (result == null) {
+			result = 0.0;
 		}
-		System.out.println(dou);
-		return session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
+		return result;
 	}
 
 	public List<ElecData> getRecent12H() throws Exception {

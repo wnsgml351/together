@@ -39,12 +39,14 @@ public class ApiController {
 		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
 		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
 
-		System.out.println(start + " - " + end);
-
 		date.setStartDate(start);
 		date.setEndDate(end);
 
-		return service.getThisMonthSumData(date);
+		Double d = service.getThisMonthSumData(date);
+
+		System.out.println(start + " - " + end + " - " + d);
+
+		return d;
 	}
 
 }
