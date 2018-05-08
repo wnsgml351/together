@@ -6,7 +6,7 @@
 		<i class="fa fa-area-chart"></i> 실시간 전력소비 현황
 	</div>
 	<div class="card-body">
-		<canvas id="myAreaChart"></canvas>
+		<canvas id="myAreaChart" height="100%"></canvas>
 	</div>
 	<div class="card-footer small text-muted">
 		<a class="pull-right" style="color: #495057" href="#">more <i class="fa fa-arrow-right"></i></a>
