@@ -29,6 +29,7 @@ public class TogetherDAOImpl implements TogetherDAO {
 
 	@Override
 	public void insertData(ElecData e) throws Exception {
+		System.out.println(e.getWatt());
 		session.insert(NAMESPACE + ".insertData", e);
 	}
 

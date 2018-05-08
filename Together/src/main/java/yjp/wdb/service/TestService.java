@@ -54,6 +54,7 @@ public class TestService {
 						e.setTitle("data");
 						e.setWatt(v);
 					} catch (NumberFormatException ne) {
+						ne.printStackTrace();
 					}
 					dao.insertData(e);
 				}
