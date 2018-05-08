@@ -1,9 +1,8 @@
 	$(document).ready(function(){
 		alert("띠용");
 		/*
-		changeData();
-		setInterval(changeData, 25 * 1000);
-		*/	
+		 * changeData(); setInterval(changeData, 25 * 1000);
+		 */	
 		var chart = $("#myAreaChart")[0];
 		chart.getContext("2d");
 		
@@ -30,32 +29,19 @@
 			option: cOption		
 		});
 		
-		
-		/*
-		 * var myChart = new Chart(chart).Line(cData, { onAnimationComplete:
-		 * function () { var sourceCanvas = this.chart.ctx.canvas; // the -5 is
-		 * so that we don't copy the edges of the line var copyWidth =
-		 * this.scale.xScalePaddingLeft - 5; // the +5 is so that the bottommost
-		 * y axis label is not clipped off // we could factor this in using
-		 * measureText if we wanted to be generic var copyHeight =
-		 * this.scale.endPoint + 5; var targetCtx =
-		 * document.getElementById("myAreaChart2").getContext("2d");
-		 * targetCtx.canvas.width = copyWidth; targetCtx.drawImage(sourceCanvas,
-		 * 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight); }
-		 * 
-		 * });
-		 */
-		
+	
 		$.ajax({
 			url: "getRecent12H",
-			success: function(data){
-				alert(data[0].reg_string_date);
-				insertData(myChart, data)
-			},
-			error: function(data){
-				alert("실패 " + data);
-			}
-		});
+			type: "get",
+			dataType: "json",
+			success:function(data){
+				alert(data[0].reg_string_date); 
+				insertData(myChart,data)
+				},
+				error: function(data){
+					alert("실패 " + data);
+					}
+				});
 	});
 	
 	function changeData(){
@@ -74,10 +60,12 @@
 	function insertData(myChart, arr){
 		var len = Object.keys(arr).length;
 		var d;
-		var dd;
+		var dd = "label";
+		
 		for(var i=0; i<len; i++){
-			d = new Date(arr[i].reg_date);
-			dd = splitDate(d);
+			/*
+			 * d = new Date(arr[i].reg_string_date); dd = splitDate(d);
+			 */
 			addData(myChart, dd, arr[i].watt);
 		}
 	};
@@ -90,7 +78,7 @@
 		result += date.getDate() + "/ ";
 		result += date.getHours() + ":";
 		result += date.getMinutes();
-		
+		k
 		return result;
 	};
 	
