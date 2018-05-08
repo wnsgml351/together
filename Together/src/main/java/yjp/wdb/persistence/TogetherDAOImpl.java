@@ -57,7 +57,12 @@ public class TogetherDAOImpl implements TogetherDAO {
 		d.setStartLongDate(start);
 		d.setEndLongDate(end);
 
-		return session.selectList(NAMESPACE + ".getRecent12H", d);
+		List<ElecData> list = session.selectList(NAMESPACE + ".getRecent12H", d);
+
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getWatt() + " - " + list.get(i).getReg_string_date());
+		}
+		return list;
 	}
 
 }
