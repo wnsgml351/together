@@ -1,89 +1,84 @@
+	$(document).ready(function() {
+	  changeData();
+	  setInterval(changeData, 25 * 1000);
+	  var chart = $("#myAreaChart")[0];
+	  chart.getContext("2d");
+	  var cData = {
+	    labels: [],
+	    datasets: [{
+	      label: "datas",
+	      backgroundColor: "rgba(255, 0, 0, 0.5)",
+	      borderColor: "rgba(255, 0, 0, 0.2)",
+	      data: [],
+	      fill: true
+	    }],
+	  };
+	  var cOption = {
+	    responsive: true
+	  };
+	  var myChart = new Chart(chart, {
+	    type: 'bar',
+	    data: cData,
+	    option: cOption
+	  });
+	  $.ajax({
+	    url: "getRecent12H",
+	    success: function(data) {
+	      for (var i = 0; i < data.length; i++) {
+			console.log("와트 : " + data[i].watt);
+	        console.log("날짜 : " + data[i].reg_string_date);
+	      }
+	      insertData(myChart, data);
+	    },
+	    error: function(data) {
+	      alert("실패 " + data);
+	    }
+	  });
+	});
 
-(function ($) {
-    "use strict";
+	function changeData() {
+	  $.ajax({
+	    url: "getThisMonthSumData",
+	    success: function(data) {
+	      console.log(data);
+	      $("#sum").text(data + "kWh");
+	    },
+	    error: function() {
+	      alert("실패");
+	    }
+	  });
+	}
 
+	function insertData(myChart, arr) {
+	  var len = Object.keys(arr).length;
+	  var d;
+	  var dd;
+	  for (var i = 0; i < len; i++) {
+	    /*
+	    d = new Date(arr[i].reg_string_date);
+		dd = splitDate(d);
+		*/
+	    dd = arr[i].reg_string_date.split(" ");
+	    dd[1] = dd[1] + "~" + (parseInt(dd[1]) + 1);
+	    console.log(dd[1]);
+	    addData(myChart, dd[1], arr[i].watt);
+	  }
+	};
 
-    /*==================================================================
-    [ Focus input ]*/
-    $('.input100').each(function(){
-        $(this).on('blur', function(){
-            if($(this).val().trim() != "") {
-                $(this).addClass('has-val');
-            }
-            else {
-                $(this).removeClass('has-val');
-            }
-        })    
-    })
-  
-  
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
+	function splitDate(date) {
+	  var result;
+	  result = date.getUTCFullYear() + "/";
+	  result += date.getMonth() + "/";
+	  result += date.getDate() + "/ ";
+	  result += date.getHours() + ":";
+	  result += date.getMinutes();
+	  return result;
+	};
 
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        return check;
-    });
-
-
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
-
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    /*==================================================================
-    [ Show pass ]*/
-    var showPass = 0;
-    $('.btn-show-pass').on('click', function(){
-        if(showPass == 0) {
-            $(this).next('input').attr('type','text');
-            $(this).find('i').removeClass('zmdi-eye');
-            $(this).find('i').addClass('zmdi-eye-off');
-            showPass = 1;
-        }
-        else {
-            $(this).next('input').attr('type','password');
-            $(this).find('i').addClass('zmdi-eye');
-            $(this).find('i').removeClass('zmdi-eye-off');
-            showPass = 0;
-        }
-        
-    });
-
-
-})(jQuery);
+	function addData(chart, label, data) {
+	  chart.data.labels.push(label);
+	  chart.data.datasets.forEach((dataset) => {
+	    dataset.data.push(data);
+	  });
+	  chart.update();
+	};

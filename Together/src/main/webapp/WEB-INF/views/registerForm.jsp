@@ -126,6 +126,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="./resources/js/main.js"></script>
+	<script src="./resources/js/login.js"></script>
 </body>
 </html>

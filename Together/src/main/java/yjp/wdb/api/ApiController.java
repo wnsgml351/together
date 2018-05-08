@@ -23,9 +23,9 @@ public class ApiController {
 		List<ElecData> list = service.getAllData();
 		return list;
 	}
-	
-	@RequestMapping(value="getRecent12H", method=RequestMethod.GET)
-	public List<ElecData> getRecent12H() throws Exception{
+
+	@RequestMapping(value = "getRecent12H", method = RequestMethod.GET)
+	public List<ElecData> getRecent12H() throws Exception {
 		List<ElecData> list = service.getRecent12H();
 		return list;
 	}
@@ -36,16 +36,15 @@ public class ApiController {
 
 		yjp.wdb.domain.Date date = new yjp.wdb.domain.Date();
 
-		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1)
-				+ "-1";
+		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
 		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
 
-		System.out.println(start + " = " + end);
+		System.out.println(start + " - " + end);
 
 		date.setStartDate(start);
 		date.setEndDate(end);
 
 		return service.getThisMonthSumData(date);
 	}
-	
+
 }
