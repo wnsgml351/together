@@ -25,7 +25,7 @@
 	    url: "getRecent12H",
 	    success: function(data) {
 	      for (var i = 0; i < data.length; i++) {
-			console.log("와트 : " + data[i].watt);
+	        console.log("와트 : " + data[i].watt);
 	        console.log("날짜 : " + data[i].reg_string_date);
 	      }
 	      insertData(myChart, data);
@@ -40,7 +40,7 @@
 	  $.ajax({
 	    url: "getThisMonthSumData",
 	    success: function(data) {
-	      console.log(data);
+	      console.log(data + "kWh");
 	      $("#sum").text(data + "kWh");
 	    },
 	    error: function() {
