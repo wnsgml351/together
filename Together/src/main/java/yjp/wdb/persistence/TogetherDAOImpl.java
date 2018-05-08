@@ -1,6 +1,7 @@
 package yjp.wdb.persistence;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -56,7 +57,6 @@ public class TogetherDAOImpl implements TogetherDAO {
 		d.setStartLongDate(start);
 		d.setEndLongDate(end);
 
-		// + (60 - c.get(Calendar.MINUTE) * 1000)
 		return session.selectList(NAMESPACE + ".getRecent12H", d);
 	}
 

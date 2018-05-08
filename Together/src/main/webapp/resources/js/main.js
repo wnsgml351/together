@@ -1,8 +1,9 @@
 	$(document).ready(function(){
-		
+		alert("띠용");
+		/*
 		changeData();
 		setInterval(changeData, 25 * 1000);
-		
+		*/	
 		var chart = $("#myAreaChart")[0];
 		chart.getContext("2d");
 		
@@ -46,8 +47,9 @@
 		 */
 		
 		$.ajax({
-			url: "getAllData",
+			url: "getRecent12H",
 			success: function(data){
+				alert(data[0].reg_string_date);
 				insertData(myChart, data)
 			},
 			error: function(data){
