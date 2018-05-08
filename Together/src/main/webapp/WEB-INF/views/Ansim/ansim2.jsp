@@ -45,10 +45,6 @@
 	border-radius: 100px;
 }
 </style>
-<script>
-	$(document).ready(function() {
-	});
-</script>
 </head>
 <body>
 	<div id="thidDiv" style="display: inline-block;"></div>
