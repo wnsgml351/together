@@ -106,7 +106,7 @@ public class HomeController {
 		if (l.getStatus() == 1) {
 			System.out.println("dd");
 			session.setAttribute("login", login);
-			return "main";
+			return "redirect:main";
 		} else {
 			System.out.println("nn");
 			return "redirect:login";
