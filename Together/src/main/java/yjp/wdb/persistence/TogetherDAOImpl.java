@@ -44,7 +44,7 @@ public class TogetherDAOImpl implements TogetherDAO {
 	public List<ElecData> getRecent12H() throws Exception {
 
 		Calendar c = Calendar.getInstance();
-		long end = c.getTimeInMillis() + ((60 - c.get(Calendar.MINUTE)) * 60 * 1000);
+		long end = c.getTimeInMillis() + ((60 - c.get(Calendar.MINUTE)) * 60 * 1000) - (60 - c.get(Calendar.SECOND) * 1000) - 1;
 		long start = end - (12 * 60 * 60 * 1000);
 
 		start /= 1000;
@@ -56,7 +56,7 @@ public class TogetherDAOImpl implements TogetherDAO {
 		d.setStartLongDate(start);
 		d.setEndLongDate(end);
 
-		//  + (60 - c.get(Calendar.MINUTE) * 1000)
+		// + (60 - c.get(Calendar.MINUTE) * 1000)
 		return session.selectList(NAMESPACE + ".getRecent12H", d);
 	}
 
