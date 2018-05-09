@@ -10,7 +10,7 @@
 			<div class="card-head text-center" style="margin-top: 10px; padding-bottom:10px; border-bottom: 1px solid white;">
 				<i class="fa fa-bolt"></i> 현재 전력 소비량
 			</div>
-			<div class="card-body">
+			<div class="card-body text-center">
 
 				<div class="mr-5" id="sum">-kWh</div>
 			</div>
@@ -24,7 +24,7 @@
 			<div class="card-head text-center" style="margin-top: 10px; padding-bottom:10px; border-bottom: 1px solid white;">
 				<i class="fa fa-bolt"></i> 현재 전력 소비량
 			</div>
-			<div class="card-body">
+			<div class="card-body text-center">
 
 				<div class="mr-5">-kWh</div>
 			</div>
@@ -39,7 +39,7 @@
 				<i class="fa fa-bolt"></i> 누진단계
 			</div>
 
-			<div class="card-body">
+			<div class="card-body text-center">
 				<div class="mr-5">-단계</div>
 			</div>
 
