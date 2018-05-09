@@ -22,20 +22,20 @@
      $.ajax({
        url: "http://localhost:8080/together/ansim",
        success: function(data) {
-    	   var total = 0;
+         var total = 0;
          for (var i = 0; i < data.length; i++) {
-        	 total += data[i].watt;
-        	 console.log("타이틀 : " + data[i].title);
+           total += data[i].watt;
+           console.log("타이틀 : " + data[i].title);
            console.log("와트 : " + data[i].watt);
            console.log("날짜 : " + data[i].reg_string_date);
          }
          insertData(myChart, data);
-         if(total < 10 || total > 400){
-        	 $("#status").text("안전");
-        	 $("#thidDiv").addClass("safety");
-         }else{
-        	 $("#status").text("위험");
-        	 $("#thidDiv").addClass("danger");
+         if (total < 10 || total > 400) {
+           $("#status").text("안전");
+           $("#thidDiv").addClass("safety");
+         } else {
+           $("#status").text("위험");
+           $("#thidDiv").addClass("danger");
          }
        },
        error: function(data) {

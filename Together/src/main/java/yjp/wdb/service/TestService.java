@@ -65,6 +65,26 @@ public class TestService {
 		}
 		System.out.println("===== 데이터 수신 끝 =====");
 	}
+	
+	// @Scheduled(fixedDelay = 1000)
+	private void testOnOff() {
+		System.out.println("===== 껏다 켰다 시작 =====");
+		try {
+			String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=setControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1&on=1";
+			RestTemplate template = new RestTemplate();
+			String json = template.getForObject(url, String.class);
+			Thread.sleep(1000);
+			String url2 = "http://net.yjc.ac.kr:100/isocketsapi?cmd=setControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1&on=0";
+			RestTemplate template2 = new RestTemplate();
+			String json2 = template.getForObject(url2, String.class);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("===== 껏다 켰다 끝 =====");
+	}
+	
+	
 
 	private int convertValue(Object o) {
 

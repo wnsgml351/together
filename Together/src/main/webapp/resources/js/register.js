@@ -1,6 +1,3 @@
-/**
- * 
- */
 $(document).ready(function() {
   var id_status = false;
   var pattern = /\s/g + "";

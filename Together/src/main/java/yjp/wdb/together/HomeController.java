@@ -44,10 +44,11 @@ public class HomeController {
 
 	@Inject
 	private ElecDataService Elecdataservice;
-
-	/*
-	 * 
-	 */
+	
+	@RequestMapping(value = "test", method = RequestMethod.GET)
+	public void test() {
+		
+	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
