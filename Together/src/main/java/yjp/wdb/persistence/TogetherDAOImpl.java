@@ -1,6 +1,7 @@
 package yjp.wdb.persistence;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -28,17 +29,17 @@ public class TogetherDAOImpl implements TogetherDAO {
 
 	@Override
 	public void insertData(ElecData e) throws Exception {
+		System.out.println(e.getWatt());
 		session.insert(NAMESPACE + ".insertData", e);
 	}
 
 	@Override
 	public Double getThisMonthSumData(Date d) throws Exception {
-		Double dou = session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
-		if (dou == null) {
-			dou = 0.0;
+		Double result = session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
+		if (result == null) {
+			result = 0.0;
 		}
-		System.out.println(dou);
-		return session.selectOne(NAMESPACE + ".getThisMonthSumData", d);
+		return result;
 	}
 
 	public List<ElecData> getRecent12H() throws Exception {
@@ -56,8 +57,12 @@ public class TogetherDAOImpl implements TogetherDAO {
 		d.setStartLongDate(start);
 		d.setEndLongDate(end);
 
-		// + (60 - c.get(Calendar.MINUTE) * 1000)
-		return session.selectList(NAMESPACE + ".getRecent12H", d);
+		List<ElecData> list = session.selectList(NAMESPACE + ".getRecent12H", d);
+
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getWatt() + " - " + list.get(i).getReg_string_date());
+		}
+		return list;
 	}
 
 }

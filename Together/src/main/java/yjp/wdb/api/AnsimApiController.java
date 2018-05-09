@@ -1,0 +1,24 @@
+package yjp.wdb.api;
+
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.swing.plaf.synth.SynthScrollBarUI;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import yjp.wdb.domain.ElecData;
+import yjp.wdb.service.ElecDataService;
+
+@RestController
+public class AnsimApiController {
+	@Inject
+	private ElecDataService service;
+
+	@RequestMapping(value = "ansim")
+	public List<ElecData> ansim() throws Exception {
+		return service.ansim();
+	}
+}

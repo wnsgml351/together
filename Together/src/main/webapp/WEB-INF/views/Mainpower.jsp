@@ -12,7 +12,7 @@
 			</div>
 			<div class="card-body">
 
-				<div class="mr-5">-kWh</div>
+				<div class="mr-5" id="sum">-kWh</div>
 			</div>
 		</div>
 	</div>

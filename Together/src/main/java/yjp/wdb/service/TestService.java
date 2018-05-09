@@ -31,11 +31,7 @@ public class TestService {
 	@Scheduled(fixedDelay = 25000)
 	public void TestSchedular() {
 
-		/*
-		 * boolean status = false;
-		 * 
-		 * String checkStatusUrl = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getProductInfo&devid=361A24C0B62ABA394510230920B88641"; RestTemplate rTemp = new RestTemplate(); String checkStatus = rTemp.getForObject(checkStatusUrl, String.class); JSONParser jParser = new JSONParser(); try { Object o = jParser.parse(checkStatus); JSONObject jObject = (JSONObject) o; System.out.println("상태 : " + jObject.get("result")); if (jObject.get("result").equals("success")) { status = true; } else { status = false; } } catch (Exception ee) { ee.printStackTrace(); }
-		 */
+		System.out.println("===== 데이터 수신 시작 =====");
 
 		try {
 			String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1";
@@ -51,27 +47,44 @@ public class TestService {
 				JSONObject jObj = (JSONObject) jArray.get(i);
 				if (jObj.get("paramUnit").equals("W")) {
 					ElecData e = new ElecData();
-					System.out.println("벨류 : " + jObj.get("paramValue"));
+					System.out.println("값 : " + jObj.get("paramValue"));
 
 					try {
 						int v = convertValue(jObj.get("paramValue"));
-						System.out.println(convertValue(jObj.get("paramValue")));
 						e.setTitle("data");
 						e.setWatt(v);
 					} catch (NumberFormatException ne) {
-						System.out.println("야스야스오");
+						ne.printStackTrace();
 					}
-					System.out.println("야스");
-
 					dao.insertData(e);
 				}
 			}
 
-			System.out.println("====================");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("===== 데이터 수신 끝 =====");
 	}
+	
+	// @Scheduled(fixedDelay = 1000)
+	private void testOnOff() {
+		System.out.println("===== 껏다 켰다 시작 =====");
+		try {
+			String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=setControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1&on=1";
+			RestTemplate template = new RestTemplate();
+			String json = template.getForObject(url, String.class);
+			Thread.sleep(1000);
+			String url2 = "http://net.yjc.ac.kr:100/isocketsapi?cmd=setControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1&on=0";
+			RestTemplate template2 = new RestTemplate();
+			String json2 = template.getForObject(url2, String.class);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("===== 껏다 켰다 끝 =====");
+	}
+	
+	
 
 	private int convertValue(Object o) {
 

@@ -16,55 +16,8 @@ public class ElecDataServiceImpl implements ElecDataService {
 	private ElecDataDAO dao;
 
 	@Override
-	public List<ElecData> test(ElecData e) {
-		return dao.test(e);
-	}
-
-	@Override
-	public List<ElecData> dataDay() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.dataDay();
-	}
-
-	@Override
-	public List<List<ElecData>> ansim() throws Exception {
-		// TODO Auto-generated method stub
+	public List<ElecData> ansim() throws Exception {
 		return dao.ansim();
 	}
-
-	@Override
-	public List<List<ElecData>> ansimall() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansimall();
-	}
-
-	@Override
-	public List<ElecData> dataMonth() throws Exception {
-		return dao.dataMonth();
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<ElecData> ansimDayAll() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansimDayAll();
-	}
-
-	@Override
-	public List<List<ElecData>> ansimdayLast() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansimdayLast();
-	}
-
-	/*@Override
-	public List<List<ElecData>> ansima() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansima();
-	}*/
-	
-	
-	
-	
 
 }
