@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <div class="row">
 
@@ -10,7 +11,7 @@
 			<div class="card-head text-center" style="margin-top: 10px; padding-bottom:10px; border-bottom: 1px solid white;">
 				<i class="fa fa-bolt"></i> 현재 전력 소비량
 			</div>
-			<div class="card-body text-center">
+			<div class="card-body text-center" style="font-size:24px;">
 
 				<div class="mr-5" id="sum">-kWh</div>
 			</div>
@@ -24,7 +25,7 @@
 			<div class="card-head text-center" style="margin-top: 10px; padding-bottom:10px; border-bottom: 1px solid white;">
 				<i class="fa fa-bolt"></i> 현재 전력 소비량
 			</div>
-			<div class="card-body text-center">
+			<div class="card-body text-center" style="font-size:24px;">
 
 				<div class="mr-5">-kWh</div>
 			</div>
@@ -39,7 +40,7 @@
 				<i class="fa fa-bolt"></i> 누진단계
 			</div>
 
-			<div class="card-body text-center">
+			<div class="card-body text-center" style="font-size:24px;">
 				<div class="mr-5">-단계</div>
 			</div>
 
