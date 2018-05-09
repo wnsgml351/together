@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script src="../resources/js/ansim.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/ansim.js"></script>
 <style>
 .card-body-icon {
 	position: absolute;
@@ -46,14 +46,29 @@
 }
 </style>
 </head>
-<body>
-	<div id="thidDiv" style="display: inline-block;"></div>
-	<div style="display: inline-block; font-size: 20px;">
-		<b id="status"></b>
+<body class="sticky-footer bg-dark" id="page-top">
+	<c:if test="${login.id ne null}">
+		<div>
+			<jsp:include page="../header.jsp" flush="false" />
+		</div>
+	</c:if>
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<div>
+				<div id="thidDiv" style="display: inline-block;"></div>
+				<div style="display: inline-block; font-size: 20px;">
+					<b id="status"></b>
+
+				</div>
+				<div>
+					<canvas id="myAreaChart" height="100%"></canvas>
+				</div>
+			</div>
+		</div>
 	</div>
-	
-	<div class="card-body">
-		<canvas id="myAreaChart" height="100%"></canvas>
+
+	<div>
+		<jsp:include page="../footer.jsp" flush="false" />
 	</div>
 </body>
 </html>
