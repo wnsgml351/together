@@ -14,10 +14,25 @@
 	    }],
 	  };
 	  var cOption = {
-	    responsive: true
+	    responsive: true,
+	    scales: {
+	      xAxes: [{
+	        ticks: {
+	          display: false
+	        }
+	      }],
+	      yAxes: [{
+	        ticks: {
+	          min: 0,
+	          max: 100,
+	          stepSize: 10,
+	          display: true
+	        }
+	      }]
+	    }
 	  };
 	  var myChart = new Chart(chart, {
-	    type: 'bar',
+	    type: 'line',
 	    data: cData,
 	    option: cOption
 	  });
@@ -55,9 +70,8 @@
 	  var dd;
 	  for (var i = 0; i < len; i++) {
 	    /*
-	    d = new Date(arr[i].reg_string_date);
-		dd = splitDate(d);
-		*/
+	     * d = new Date(arr[i].reg_string_date); dd = splitDate(d);
+	     */
 	    dd = arr[i].reg_string_date.split(" ");
 	    dd[1] = dd[1] + "~" + (parseInt(dd[1]) + 1);
 	    console.log(dd[1]);
