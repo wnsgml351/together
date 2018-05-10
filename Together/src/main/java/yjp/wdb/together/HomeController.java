@@ -77,7 +77,7 @@ public class HomeController {
 
 		registerService.insert(register);
 
-		rttr.addFlashAttribute("register", "this is 경산");
+		rttr.addFlashAttribute("register", "조종현 일베충");
 
 		return "redirect:/";
 	}
