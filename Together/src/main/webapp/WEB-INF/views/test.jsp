@@ -4,23 +4,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+
 <script>
-	$(document).ready(function() {
-		$("#checkbox").click(function(e) {
-			if($("#checkbox").is(":checked")){
-				alert("1");
-			}else{
-				alert("2");
-			}
-			// e.preventDefault();
-			
-		});
-	});
+
 </script>
-<title>Insert title here</title>
+<title>테스트 페이지 데스네</title>
 </head>
 <body>
-	<h1>test</h1>
-	<input type="checkbox" id="checkbox">
+	<h1>테스트 페이지 데스네</h1>
+	<hr>
+	
 </body>
 </html>
