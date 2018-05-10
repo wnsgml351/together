@@ -39,21 +39,19 @@ public class ApiController {
 
 	@RequestMapping(value = "getThisMonthSumData", method = RequestMethod.GET)
 	public Double getThisMonthSumData() throws Exception {
-		Calendar c = Calendar.getInstance();
-
-		yjp.wdb.domain.Date date = new yjp.wdb.domain.Date();
-
-		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
-		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
-
-		date.setStartDate(start);
-		date.setEndDate(end);
-
-		Double d = service.getThisMonthSumData(date);
-
-		System.out.println(start + " - " + end + " - " + d);
+		Double d = service.getThisMonthSumData();
 
 		return d;
+	}
+
+	@RequestMapping(value = "getThisDaySumData", method = RequestMethod.GET)
+	public Double getThisDaySumData() throws Exception {
+		return service.getThisDaySumData();
+	}
+
+	@RequestMapping(value = "getThisMonthStack", method = RequestMethod.GET)
+	public int getThisMonthStack() throws Exception {
+		return service.getThisMonthStack();
 	}
 
 	@RequestMapping(value = "getStatus", method = RequestMethod.GET)

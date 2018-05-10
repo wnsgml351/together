@@ -40,11 +40,9 @@ $(document).ready(function() {
     url: "getRecent12H",
     success: function(data) {
       /*
-      for (var i = 0; i < data.length; i++) {
-        console.log("와트 : " + data[i].watt);
-        console.log("날짜 : " + data[i].reg_string_date);
-      }
-      */
+       * for (var i = 0; i < data.length; i++) { console.log("와트 : " +
+       * data[i].watt); console.log("날짜 : " + data[i].reg_string_date); }
+       */
       insertData(myChart, data);
     },
     error: function(data) {
@@ -57,13 +55,33 @@ function changeData() {
   $.ajax({
     url: "getThisMonthSumData",
     success: function(data) {
-      console.log(data + "kWh");
-      $("#sum").text(data + "kWh");
+      console.log("당월 - " + data + "kWh");
+      $("#month").text(data + "kWh");
     },
     error: function() {
       alert("실패");
     }
   });
+  $.ajax({
+    url: "getThisDaySumData",
+    success: function(data) {
+      console.log("금일 - " + data + "kWh");
+      $("#day").text(data + "kWh");
+    },
+    error: function() {
+      alert("실패");
+    }
+  });
+  $.ajax({
+    url: "getThisMonthStack",
+    success: function(data) {
+      console.log("누진 - " + data + "단계");
+      $("#stack").text(data + "단계");
+    },
+    error: function() {
+      alert("실패");
+    }
+  })
 }
 
 function insertData(myChart, arr) {

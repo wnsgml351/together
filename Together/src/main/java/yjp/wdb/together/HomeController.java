@@ -54,16 +54,23 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
+		System.out.println("/");
 		return "home";
 	}
 
+	@RequestMapping(value = "main", method = RequestMethod.GET)
+	public void main() {
+
+	}
+
 	@RequestMapping(value = "guestMain", method = RequestMethod.GET)
-	public String main() {
+	public String guestMain() {
 		return "guest/main";
 	}
 
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String home2() {
+		System.out.println("home");
 		return "redirect:/";
 	}
 
@@ -77,7 +84,7 @@ public class HomeController {
 
 		registerService.insert(register);
 
-		rttr.addFlashAttribute("register", "조종현 일베충");
+		rttr.addFlashAttribute("register", "이것은 경산");
 
 		return "redirect:/";
 	}
