@@ -10,7 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.5/push.js"></script>
 <script>
-var myContextPath = "${pageContext.request.contextPath}";
+	var myContextPath = "${pageContext.request.contextPath}";
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.ajax-cross-origin.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/ansim.js"></script>
@@ -53,11 +53,9 @@ var myContextPath = "${pageContext.request.contextPath}";
 </style>
 </head>
 <body class="sticky-footer bg-dark" id="page-top">
-	<c:if test="${login.id ne null}">
-		<div>
-			<jsp:include page="../header.jsp" flush="false" />
-		</div>
-	</c:if>
+	<div>
+		<jsp:include page="../header.jsp" flush="false" />
+	</div>
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<div>

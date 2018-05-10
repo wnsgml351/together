@@ -3,7 +3,6 @@ $(document).ready(function() {
   var pattern = /\s/g + "";
   $("#confirmId").click(function() {
     var id_value = "id=" + $("#id").val();
-    alert(id_value);
     if (id_value.match(pattern) || id_value.length > 2) {
       $.ajax({
         type: "get",
@@ -11,7 +10,6 @@ $(document).ready(function() {
         data: id_value,
         dataType: "text",
         success: function(data) {
-          alert(data);
           if (data == '1') {
             document.getElementById("success-join-id").innerHTML = "사용가능한 아이디입니다.";
             document.getElementById("error-join-id").innerHTML = "";

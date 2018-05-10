@@ -46,10 +46,10 @@ public class HomeController {
 
 	@Inject
 	private ElecDataService Elecdataservice;
-	
+
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public void test() {
-		
+
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -57,9 +57,9 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "main", method = RequestMethod.GET)
+	@RequestMapping(value = "guestMain", method = RequestMethod.GET)
 	public String main() {
-		return "main";
+		return "guest/main";
 	}
 
 	@RequestMapping(value = "home", method = RequestMethod.GET)
@@ -80,6 +80,11 @@ public class HomeController {
 		rttr.addFlashAttribute("register", "조종현 일베충");
 
 		return "redirect:/";
+	}
+
+	@RequestMapping(value = "myPage", method = RequestMethod.GET)
+	public void myPage() throws Exception {
+
 	}
 
 	@RequestMapping("confirmId")
@@ -117,170 +122,136 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public String logout(HttpSession session, RedirectAttributes rttr) throws Exception {
+	public String logout(HttpSession session) throws Exception {
 
 		session.invalidate();
 
-		return "redirect:/";
+		return "redirect:home";
 	}
 
 	@RequestMapping(value = "control", method = RequestMethod.GET)
 	public void control() {
 	}
 
-	@RequestMapping(value="groupRegister",method=RequestMethod.GET)
+	@RequestMapping(value = "groupRegister", method = RequestMethod.GET)
 
-	public String buildingRegister(Model model,HttpSession session) {
+	public String buildingRegister(Model model, HttpSession session) {
 
-		model.addAttribute("sessionId",session.getAttribute("login"));
+		model.addAttribute("sessionId", session.getAttribute("login"));
 
 		return "groupRegister";
 
 	}
 
-	
+	@RequestMapping(value = "Bregist", method = RequestMethod.GET)
 
-	@RequestMapping(value="Bregist",method=RequestMethod.GET)
+	public String Bregist(Model model, Groups groups, String id) throws Exception {
 
-	public String Bregist(Model model,Groups groups,String id) throws Exception {
+		int usergroupno = registerService.userGroupNo(id);
 
-		int usergroupno=registerService.userGroupNo(id);
-
-		System.out.println("아이디값 "+ id+"아이디에 대한 유저그룹번호"+usergroupno);
+		System.out.println("아이디값 " + id + "아이디에 대한 유저그룹번호" + usergroupno);
 
 		//groups에 groups.setParent에 넣기
 
 		groups.setParent_group(usergroupno);
 
-		System.out.println("그룹스 저장된 값들"+groups.getGroup_name()+"부모그룹 no"+groups.getParent_group());
+		System.out.println("그룹스 저장된 값들" + groups.getGroup_name() + "부모그룹 no" + groups.getParent_group());
 
 		registerService.insertGroups(groups);
 
-		
+		System.out.println("넘어온값:" + groups.getGroup_name());
 
-		System.out.println("넘어온값:"+groups.getGroup_name());
+		int result = registerService.selectGroupsNo(groups.getGroup_name());
 
-		int result=registerService.selectGroupsNo(groups.getGroup_name());
-
-		
-
-		
-
-		Map<String,Object> map=new HashMap<String,Object>();
+		Map<String, Object> map = new HashMap<String, Object>();
 
 		map.put("group_no", result);
 
 		map.put("id", id);
 
-		model.addAttribute("build",map);
+		model.addAttribute("build", map);
 
 		return "roomRegister";
 
 	}
 
-	
+	@RequestMapping(value = "roomList", method = RequestMethod.GET)
 
-	@RequestMapping(value="roomList",method=RequestMethod.GET)
+	public String roomRegister(Model model, HttpSession session) throws Exception {
 
-	public String roomRegister(Model model,HttpSession session) throws Exception {
+		Login login = (Login) session.getAttribute("login");
 
-		Login login=(Login) session.getAttribute("login");
+		System.out.println("아이디 값:" + login.getId());
 
-		System.out.println("아이디 값:"+login.getId());
+		int parent_group = registerService.userGroupNo(login.getId());
 
-		int parent_group=registerService.userGroupNo(login.getId());
+		System.out.println("유저 그룹번호" + parent_group);
 
-		System.out.println("유저 그룹번호"+parent_group);
+		List<Groups> groups = registerService.roomList(parent_group);
 
-		List<Groups> groups=registerService.roomList(parent_group);
+		for (int i = 0; i < groups.size(); i++) {
 
-		
+			System.out.println("그룹 번호" + groups.get(i).getGroup_no());
 
-		for(int i=0;i<groups.size();i++) {
+			System.out.println("그룹 이름" + groups.get(i).getGroup_name());
 
-			System.out.println("그룹 번호"+groups.get(i).getGroup_no());
-
-			System.out.println("그룹 이름"+groups.get(i).getGroup_name());
-
-			System.out.println("그룹 부모 번호"+groups.get(i).getParent_group());
+			System.out.println("그룹 부모 번호" + groups.get(i).getParent_group());
 
 		}
 
-		model.addAttribute("groups",groups);
-
-		
+		model.addAttribute("groups", groups);
 
 		return "roomList";
 
 	}
 
-	
+	@RequestMapping(value = "groupRepeat", method = RequestMethod.GET)
 
-	
+	@ResponseBody
+	public Groups groupRepeat(Groups groups) throws Exception {
 
-	@RequestMapping(value="groupRepeat",method=RequestMethod.GET)
+		System.out.println("넘어온값" + groups.getGroup_name());
 
-	@ResponseBody public Groups groupRepeat(Groups groups) throws Exception{
-
-		
-
-		System.out.println("넘어온값"+groups.getGroup_name());
-
-		System.out.println("넘어온값 "+ groups.getParent_group());
-
-		
+		System.out.println("넘어온값 " + groups.getParent_group());
 
 		//여기서 디비 저장
 
 		registerService.insertGroups(groups);
 
-		
-
 		return groups;
 
 	}
 
-	
+	@RequestMapping(value = "roomConfirm", method = RequestMethod.GET)
 
-	@RequestMapping(value="roomConfirm",method=RequestMethod.GET)
+	@ResponseBody
+	public int roomConfirm(String group_name) throws Exception {
 
-	@ResponseBody public int roomConfirm(String group_name) throws Exception{
+		System.out.println("roomConfirm에 넘어온 값 : " + group_name);
 
-		System.out.println("roomConfirm에 넘어온 값 : "+group_name);
-
-		
-
-		int result=registerService.confirmRoomNo(group_name);
-
-		
+		int result = registerService.confirmRoomNo(group_name);
 
 		return result;
 
 	}
 
-	
+	@RequestMapping(value = "consentList", method = RequestMethod.GET)
 
-	@RequestMapping(value="consentList",method=RequestMethod.GET)
+	public String consentList(Model model, HttpSession session) throws Exception {
 
-	public String consentList(Model model,HttpSession session) throws Exception {
+		Login login = (Login) session.getAttribute("login");
 
-		Login login=(Login) session.getAttribute("login");
+		System.out.println("아이디 값:" + login.getId());
 
-		System.out.println("아이디 값:"+login.getId());
+		int parent_group = registerService.userGroupNo(login.getId());
 
-		int parent_group=registerService.userGroupNo(login.getId());
+		System.out.println("유저 그룹번호" + parent_group);
 
-		System.out.println("유저 그룹번호"+parent_group);
+		List<Groups> groups = registerService.roomList(parent_group);
 
-		List<Groups> groups=registerService.roomList(parent_group);
+		ArrayList<Integer> list = new ArrayList<Integer>();
 
-		
-
-		ArrayList<Integer> list=new ArrayList<Integer>();
-
-		
-
-		for(int i=0;i<groups.size();i++) {
+		for (int i = 0; i < groups.size(); i++) {
 
 			//System.out.println("그룹 번호"+groups.get(i).getGroup_no());
 
@@ -288,41 +259,32 @@ public class HomeController {
 
 		}
 
-		
+		for (int i = 0; i < list.size(); i++) {
 
-		for(int i=0;i<list.size();i++) {
-
-			System.out.println("리스트값:"+list.get(i));
+			System.out.println("리스트값:" + list.get(i));
 
 		}
 
-		
-
 		//model.addAttribute("groups",groups);
-
-		
 
 		return "consentList";
 
 	}
 
-	
+	@RequestMapping(value = "consentlist", method = RequestMethod.GET)
 
-	@RequestMapping(value="consentlist",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Groups> consentlist(int parent_group) throws Exception {
 
-	@ResponseBody public List<Groups> consentlist(int parent_group) throws Exception{
+		List<Groups> groups = registerService.consentlist(parent_group);
 
-		List<Groups> groups=registerService.consentlist(parent_group);
+		for (int i = 0; i < groups.size(); i++) {
 
-		
+			System.out.println("콘센트 이름 " + groups.get(i).getGroup_name());
 
-		for(int i=0;i<groups.size();i++) {
+			System.out.println("콘센트 해당 번호" + groups.get(i).getGroup_no());
 
-			System.out.println("콘센트 이름 " +groups.get(i).getGroup_name());
-
-			System.out.println("콘센트 해당 번호"+groups.get(i).getGroup_no());
-
-			System.out.println("콘센트 부모 번호"+groups.get(i).getParent_group());
+			System.out.println("콘센트 부모 번호" + groups.get(i).getParent_group());
 
 		}
 
@@ -330,91 +292,76 @@ public class HomeController {
 
 	}
 
-	
+	@RequestMapping(value = "totalList", method = RequestMethod.GET)
 
-	@RequestMapping(value="totalList",method=RequestMethod.GET)
+	public String totallist(Model model, HttpSession session) throws Exception {
 
-	public String totallist(Model model,HttpSession session) throws Exception{
+		Login login = (Login) session.getAttribute("login");
 
-		
+		System.out.println("아이디 값:" + login.getId());
 
-		Login login=(Login) session.getAttribute("login");
+		int group_no = registerService.userGroupNo(login.getId());
 
-		System.out.println("아이디 값:"+login.getId());
+		System.out.println("유저 그룹번호" + group_no);
 
-		int group_no=registerService.userGroupNo(login.getId());
+		Groups group = registerService.groupsData(group_no);
 
-		System.out.println("유저 그룹번호"+group_no);
+		/*
+		 * System.out.println("그룹 번호"+group.getGroup_no());
+		 * 
+		 * System.out.println("그룹 이름"+group.getGroup_name());
+		 * 
+		 * System.out.println("그룹 부모번호"+group.getParent_group());
+		 */
 
-		
+		List<Groups> subgroup1 = registerService.consentlist(group.getGroup_no());
 
-		Groups group=registerService.groupsData(group_no);
+		/*
+		 * for(int i=0;i<subgroup.size();i++) {
+		 * 
+		 * System.out.println("서브그룹이름"+subgroup.get(i).getGroup_name());
+		 * 
+		 * System.out.println("서브그룹 번호"+subgroup.get(i).getGroup_no());
+		 * 
+		 * System.out.println("서브그룹 부모 번호"+subgroup.get(i).getParent_group());
+		 * 
+		 * }
+		 */
 
-		/*System.out.println("그룹 번호"+group.getGroup_no());
+		List<Groups> subgroup2 = registerService.consentlist(subgroup1.get(0).getGroup_no());
 
-		System.out.println("그룹 이름"+group.getGroup_name());
-
-		System.out.println("그룹 부모번호"+group.getParent_group());*/
-
-		
-
-		List<Groups> subgroup1=registerService.consentlist(group.getGroup_no());
-
-		
-
-		/*for(int i=0;i<subgroup.size();i++) {
-
-			System.out.println("서브그룹이름"+subgroup.get(i).getGroup_name());
-
-			System.out.println("서브그룹 번호"+subgroup.get(i).getGroup_no());
-
-			System.out.println("서브그룹 부모 번호"+subgroup.get(i).getParent_group());
-
-		}*/
-
-		
-
-		List<Groups> subgroup2=registerService.consentlist(subgroup1.get(0).getGroup_no());
-
-		/*for(int i=0;i<subgroup2.size();i++) {
-
-			System.out.println("서브그룹이름"+subgroup2.get(i).getGroup_name());
-
-			System.out.println("서브그룹 번호"+subgroup2.get(i).getGroup_no());
-
-			System.out.println("서브그룹 부모 번호"+subgroup2.get(i).getParent_group());
-
-		}*/
-
-		
-
-		
+		/*
+		 * for(int i=0;i<subgroup2.size();i++) {
+		 * 
+		 * System.out.println("서브그룹이름"+subgroup2.get(i).getGroup_name());
+		 * 
+		 * System.out.println("서브그룹 번호"+subgroup2.get(i).getGroup_no());
+		 * 
+		 * System.out.println("서브그룹 부모 번호"+subgroup2.get(i).getParent_group());
+		 * 
+		 * }
+		 */
 
 		model.addAttribute("root", group.getGroup_name());
 
-		model.addAttribute("sub1",subgroup1);
+		model.addAttribute("sub1", subgroup1);
 
-		model.addAttribute("sub2",subgroup2);
-
-		
+		model.addAttribute("sub2", subgroup2);
 
 		return "totallist";
 
 	}
 
-	
+	@RequestMapping(value = "substringData", method = RequestMethod.GET)
 
-	@RequestMapping(value="substringData",method=RequestMethod.GET)
+	@ResponseBody
+	public List<String> substringData(int plug_no) throws Exception {
 
-	@ResponseBody public List<String> substringData(int plug_no) throws Exception{
+		List<String> substr = registerService.substrData(plug_no);
 
-		List<String> substr=registerService.substrData(plug_no);
+		for (int i = 0; i < substr.size(); i++) {
 
-		
-
-		for(int i=0;i<substr.size();i++) {
-
-			System.out.println("년도 날짜 일 시간 짜른 값"+substr.get(i));
+			System.out.println("년도 날짜 일 시간 짜른 값" + substr.get(i));
 
 		}
 
@@ -422,30 +369,21 @@ public class HomeController {
 
 	}
 
-	
+	@RequestMapping(value = "AvgData", method = RequestMethod.GET)
 
-	@RequestMapping(value="AvgData",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Datas> AvgData(int plug_no) throws Exception {
 
-	@ResponseBody public List<Datas> AvgData(int plug_no) throws Exception{
+		List<Datas> datas = registerService.avgtimeData(plug_no);
 
-		
+		for (int i = 0; i < datas.size(); i++) {
 
-		List<Datas> datas=registerService.avgtimeData(plug_no);
-
-		
-
-		for(int i=0;i<datas.size();i++) {
-
-			System.out.println("온값들"+datas.get(i).getAmpere());
+			System.out.println("온값들" + datas.get(i).getAmpere());
 
 		}
-
-		
 
 		return datas;
 
 	}
-
-	
 
 }

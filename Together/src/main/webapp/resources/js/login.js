@@ -20,6 +20,7 @@
   var input = $('.validate-input .input100');
   $('.validate-form').on('submit', function() {
     var check = true;
+    alert("띠용");
     for (var i = 0; i < input.length; i++) {
       if (validate(input[i]) == false) {
         showValidate(input[i]);

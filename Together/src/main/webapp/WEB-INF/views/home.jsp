@@ -45,7 +45,7 @@ p {
 		</div>
 
 		<div class="btnblock" style="margin-bottom: 10rem">
-			<a href="main" class="btn btn-outline-light btn-lg" style="width: 250px;">체험하기</a>
+			<a href="guestMain" class="btn btn-outline-light btn-lg" style="width: 250px;">체험하기</a>
 		</div>
 
 	</div>
