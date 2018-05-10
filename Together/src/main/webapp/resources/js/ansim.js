@@ -20,7 +20,8 @@
        option: cOption
      });
      $.ajax({
-       url: "http://localhost:8080/together/ansim",
+       
+       url: myContextPath + "/ansim",
        success: function(data) {
          var total = 0;
          for (var i = 0; i < data.length; i++) {
@@ -35,15 +36,15 @@
            $("#status").text("안전");
            $("#thidDiv").addClass("safety");
          } else {
-        Push.create("보호대상자가 위험한거같습니다.", {
-            body: "보호대상자가 위험한거같습니다2.",
-            icon: '../resources/img/danger.png',
-            timeout: 4000,
-            onClick: function () {
-                window.focus();
-                this.close();
-            }
-        });
+           Push.create("보호대상자가 위험한거같습니다.", {
+             body: "보호대상자가 위험한거같습니다2.",
+             icon: '../resources/img/danger.png',
+             timeout: 4000,
+             onClick: function() {
+               window.focus();
+               this.close();
+             }
+           });
            $("#status").text("위험");
            $("#thidDiv").addClass("danger");
          }
