@@ -29,11 +29,11 @@
 			</a></li>
 			<li class="nav-item" datla-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">MyPage</span>
 			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-plus"></i> <span class="nav-link-text">기기등록 / 관리</span>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-plus"></i> <span class="nav-link-text">그룹등록 / 관리</span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li><a href="#">기기등록</a></li>
-					<li><a href="#">기기수정 / 관리</a></li>
+					<li><a href="groupRegister">그룹 등록</a></li>
+					<li><a href="totalList">그룹 관리</a></li>
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">실시간 전력량</span>
 			</a></li>

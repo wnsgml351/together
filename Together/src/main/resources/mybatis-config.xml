@@ -11,5 +11,7 @@
 		<typeAlias alias="Register" type="yjp.wdb.domain.Register" />
 		<typeAlias alias="Building" type="yjp.wdb.domain.Building" />
 		<typeAlias alias="Groups" type="yjp.wdb.domain.Groups" />
+		<typeAlias alias="Datas" type="yjp.wdb.domain.Datas" />
+		
 	</typeAliases>
 </configuration>
