@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="./resources/js/jquery.ajax-cross-origin.min.js"></script>
 <script src="./resources/js/control.js"></script>
 <link href="./resources/css/control.css" rel="stylesheet" type="text/css">
 <title>관리</title>

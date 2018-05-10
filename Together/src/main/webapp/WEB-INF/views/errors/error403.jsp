@@ -39,7 +39,7 @@ li {
 
 
 </head>
-<body class="fixed-nav sticky-footer bg-light" id="page-top">
+<body class="sticky-footer bg-dark" id="page-top">
 	<div>
 		<jsp:include page="../header.jsp" flush="false" />
 	</div>

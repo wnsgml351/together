@@ -19,12 +19,13 @@ $(document).ready(function() {
     }
   });
 
-  function run(param, e){
-	  console.log(param);
+  function run(param, e) {
+    console.log(param);
     $.ajax({
+      crossOrigin: true,
       url: param,
-      data:{
-        deviceId : "361A24C0B62ABA394510230920B88641"
+      data: {
+        deviceId: "361A24C0B62ABA394510230920B88641"
       },
       dataType: "json",
       success: function(data) {

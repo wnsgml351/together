@@ -12,7 +12,7 @@
        }],
      };
      var cOption = {
-       responsive: true
+       responsive: false
      };
      var myChart = new Chart(chart, {
        type: 'bar',
@@ -20,7 +20,8 @@
        option: cOption
      });
      $.ajax({
-       url: "http://localhost:8080/together/ansim",
+       
+       url: myContextPath + "/ansim",
        success: function(data) {
          var total = 0;
          for (var i = 0; i < data.length; i++) {
@@ -29,11 +30,21 @@
            console.log("와트 : " + data[i].watt);
            console.log("날짜 : " + data[i].reg_string_date);
          }
+         console.log(total);
          insertData(myChart, data);
-         if (total < 10 || total > 400) {
+         if (total < 10 && total > 400) {
            $("#status").text("안전");
            $("#thidDiv").addClass("safety");
          } else {
+           Push.create("보호대상자가 위험한거같습니다.", {
+             body: "보호대상자가 위험한거같습니다2.",
+             icon: '../resources/img/danger.png',
+             timeout: 4000,
+             onClick: function() {
+               window.focus();
+               this.close();
+             }
+           });
            $("#status").text("위험");
            $("#thidDiv").addClass("danger");
          }

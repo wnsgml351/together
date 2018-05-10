@@ -19,6 +19,7 @@ public class AnsimApiController {
 
 	@RequestMapping(value = "ansim")
 	public List<ElecData> ansim() throws Exception {
+		System.out.println("접속");
 		return service.ansim();
 	}
 }
