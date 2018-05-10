@@ -18,7 +18,7 @@
 
 <!--네비게이션-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="mainNav">
-	<a class="navbar-brand" href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/resources/img/logo2_1.png"></a>
+	<a class="navbar-brand" href="${pageContext.request.contextPath}/main"><img src="${pageContext.request.contextPath}/resources/img/logo2_1.png"></a>
 	<button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -37,7 +37,7 @@
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">실시간 전력량</span>
 			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="Ansim/ansim2"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">상품 추천 서비스</span>
 			</a></li>
@@ -78,7 +78,7 @@
 				<div class="dropdown-menu" aria-labelledby="messagesDropdown" style="min-width: 20rem;">
 					<h6 class="dropdown-header">메세지</h6>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
+					<a class="dropdown-item" href="Ansim/ansim2"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
 						<div class="dropdown-message small">안심 서비스가 등록되었습니다.</div>
 					</a>
 				</div></li>
