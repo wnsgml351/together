@@ -1,19 +1,15 @@
 package yjp.wdb.api;
 
-import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.context.annotation.RequestScope;
 
 import yjp.wdb.domain.Device;
 import yjp.wdb.domain.ElecData;

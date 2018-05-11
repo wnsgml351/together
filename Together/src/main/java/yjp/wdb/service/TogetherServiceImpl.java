@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import yjp.wdb.domain.Date;
 import yjp.wdb.domain.ElecData;
 import yjp.wdb.persistence.TogetherDAO;
 

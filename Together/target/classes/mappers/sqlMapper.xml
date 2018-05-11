@@ -17,22 +17,21 @@
 	</insert>
 
 	<select id="getThisMonthSumData" resultType="double">
-		select
-		sum(watt)/1000 as result from data where reg_date between
-		timestamp(#{startDate}) and timestamp(#{endDate})
+		select sum(watt)/1000 as result from data
+		where reg_date
+		between LAST_DAY(now() - INTERVAL 1 month) and
+		LAST_DAY(now())
 	</select>
-	
+
 	<select id="getThisDaySumData" resultType="double">
-		select
-		sum(watt)/1000 as result from data where reg_date between
-		timestamp(#{startDate}) and timestamp(#{endDate})
+		select sum(watt)/1000 as result from data where reg_date > curdate()
 	</select>
 
 	<select id="getRecent12H" resultType="ElecData">
-		select title, sum(watt) as watt, date_format(reg_date, '%Y-%m-%d %H') as reg_string_date from data where reg_date between
-		FROM_UNIXTIME(#{startLongDate}) and FROM_UNIXTIME(#{endLongDate})
-		group by date_format(reg_date, '%Y-%m-%d %H')
-		order by reg_date
+		select title, sum(watt) as watt,
+		date_format(reg_date, '%Y-%m-%d %H') as reg_string_date from data
+		where reg_date > date_sub(now(), interval 12 hour)
+		group by date_format(reg_date, '%Y-%m-%d %H') order by reg_date
 	</select>
 
 
