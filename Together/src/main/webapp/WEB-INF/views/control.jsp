@@ -15,18 +15,26 @@
 	</div>
 	<div class="content-wrapper">
 		<div class="container-fluid">
-
-			<div class="row" style="position:relative;">
-				<img src="./resources/img/socket.png" style="border:1px solid lightgray; border-radius:0px 15px 15px 0px">
-				<div class="power">
+			<div class="alert alert-info" role="alert"><h5><b>Smart PDU</b></h5></div>
+			<div class="row" style="position: relative;">
+				<img src="./resources/img/socket.png" style="border: 1px solid lightgray; border-radius: 0px 15px 15px 0px">
+				<div class="fontposition">
 					<img src="./resources/img/power-on.png">
+					<h2 style="display: inline-block; color: gray">&nbsp본관 300호</h2>
+				</div>
+				<div class="imgposition">
+					<img src="./resources/img/on.png">
+				</div>
+
+				<div class="power">
+					<label class="switch"> <input type="checkbox" id="checkbox"> <span class="slider round"></span>
+					</label>
+					<p>OFF</p>
+					<p style="display: none;">ON</p>
 				</div>
 			</div>
-			
-			<label class="switch"> <input type="checkbox" id="checkbox"> <span class="slider round"></span>
-			</label>
-			<p>OFF</p>
-			<p style="display: none;">ON</p>
+
+
 		</div>
 	</div>
 	<div>
