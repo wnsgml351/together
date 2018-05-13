@@ -4,7 +4,7 @@
      var cData = {
        labels: [],
        datasets: [{
-         label: "datas",
+         label: "watt",
          backgroundColor: "rgba(255, 0, 0, 0.5)",
          borderColor: "rgba(255, 0, 0, 0.2)",
          data: [],

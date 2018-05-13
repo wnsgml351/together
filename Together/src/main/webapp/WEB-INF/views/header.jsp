@@ -38,6 +38,8 @@
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">실시간 전력량</span>
 			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/control"> <i class="fa fa-fw fa-toggle-on"></i> <span class="nav-link-text">원격제어</span>
+			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/Ansim/ansim2"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">상품 추천 서비스</span>

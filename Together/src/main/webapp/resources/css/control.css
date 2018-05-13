@@ -65,3 +65,11 @@ p {
 	font-size: 15px;
 	font-weight: bold;
 }
+
+.power{
+	position: absolute;
+	top:40px;
+	left:10px;
+	cursor:pointer;
+}
+

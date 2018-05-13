@@ -18,7 +18,7 @@ public class testDAOImpl implements testDAO {
 	@Override
 	public void test(Date d) throws Exception {
 		Double result = session.selectOne(NAMESPACE + ".test", d);
-		System.out.println(result+"kWh");
+		// System.out.println(result+"kWh");
 	}
 
 }

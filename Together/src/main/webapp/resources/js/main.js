@@ -1,4 +1,17 @@
 $(document).ready(function() {
+  /*
+  var test = {
+    id: {
+      text: "id-text"
+    },
+    pw: {
+      text: "pw-text"
+    }
+  };
+  console.log(test);
+  console.log(test.id);
+  console.log(test.id.text);
+  */
   changeData();
   setInterval(changeData, 25 * 1000);
   var chart = $("#myAreaChart")[0];
@@ -6,7 +19,7 @@ $(document).ready(function() {
   var cData = {
     labels: [],
     datasets: [{
-      label: "datas",
+      label: "watt",
       backgroundColor: "rgba(255, 0, 0, 0.5)",
       borderColor: "rgba(255, 0, 0, 0.2)",
       data: [],
@@ -81,7 +94,7 @@ function changeData() {
     error: function() {
       alert("실패");
     }
-  })
+  });
 }
 
 function insertData(myChart, arr) {
