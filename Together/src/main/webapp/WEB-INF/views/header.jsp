@@ -6,12 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+<jsp:include page="checkLogin.jsp" flush="false" />
+
 <link rel="icon" type="image/png" href="./resources/img/favicon.ico" />
 
 <link href="${pageContext.request.contextPath}/resources/css/sb-admin.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link href="${pageContext.request.contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -25,19 +28,17 @@
 
 	<div class="navbar-collapse collapse" id="navbarResponsive">
 		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-home"></i> <span class="nav-link-text">Home</span>
-			</a></li>
-			<li class="nav-item" datla-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">MyPage</span>
+			<li class="nav-item" datla-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/myPage"> <i class="fa fa-fw fa-user-circle"></i> <span class="nav-link-text">MyPage</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion"> <i class="fa fa-fw fa-plus"></i> <span class="nav-link-text">그룹등록 / 관리</span>
 			</a>
 				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li><a href="groupRegister">그룹 등록</a></li>
-					<li><a href="totalList">그룹 관리</a></li>
+					<li><a href="${pageContext.request.contextPath}/groupRegister">그룹 등록</a></li>
+					<li><a href="${pageContext.request.contextPath}/totalList">그룹 관리</a></li>
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">실시간 전력량</span>
 			</a></li>
-			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="Ansim/ansim2"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/Ansim/ansim2"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">상품 추천 서비스</span>
 			</a></li>
@@ -78,7 +79,7 @@
 				<div class="dropdown-menu" aria-labelledby="messagesDropdown" style="min-width: 20rem;">
 					<h6 class="dropdown-header">메세지</h6>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="Ansim/ansim2"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
+					<a class="dropdown-item" href="/Ansim/ansim2"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
 						<div class="dropdown-message small">안심 서비스가 등록되었습니다.</div>
 					</a>
 				</div></li>
