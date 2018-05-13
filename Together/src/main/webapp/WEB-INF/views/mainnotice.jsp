@@ -14,7 +14,7 @@
 
 	<div class="col-lg-6">
 		<div class="mb-0 mt-4">
-			<i class="fa fa-newspaper-o"></i> 지사항 <a class="pull-right"
+			<i class="fa fa-newspaper-o"></i> 공지사항 <a class="pull-right"
 				style="color: #495057" href="#">more <i
 				class="fa fa-arrow-right"></i></a>
 		</div>
