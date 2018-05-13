@@ -201,7 +201,7 @@
 
 			<div style="text-align: center;">
 
-			<h1>전체 리스트 페이지</h1>
+			<h1>전체 리스트</h1>
 
 			</div>
 
