@@ -133,7 +133,7 @@
 
 							error:function(){
 
-								alert('실패');
+								//alert('실패');
 
 							}
 
@@ -151,7 +151,7 @@
 
 				error:function(){
 
-					alert('실패');
+					//alert('실패');
 
 				}
 

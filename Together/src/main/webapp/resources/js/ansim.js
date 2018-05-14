@@ -30,12 +30,14 @@
            console.log("와트 : " + data[i].watt);
            console.log("날짜 : " + data[i].reg_string_date);
          }
-         console.log(total);
+         console.log("ㅌ " + total);
          insertData(myChart, data);
-         if (total < 10 && total > 400) {
+         if (total < 10 && total > 2200) {
+        	 console.log("안정");
            $("#status").text("안전");
            $("#thidDiv").addClass("safety");
          } else {
+        	 console.log("ㄴ안정");
            Push.create("보호대상자가 위험한거같습니다.", {
              body: "보호대상자가 위험한거같습니다2.",
              icon: '../resources/img/danger.png',

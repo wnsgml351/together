@@ -1,5 +1,6 @@
 package yjp.wdb.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -18,6 +19,12 @@ public class ElecDataServiceImpl implements ElecDataService {
 	@Override
 	public List<ElecData> ansim() throws Exception {
 		return dao.ansim();
+	}
+
+	@Override
+	public List<HashMap<String, Object>> ansimTable() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.ansimTable();
 	}
 
 }

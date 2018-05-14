@@ -9,4 +9,9 @@
 		group by date_format(reg_date, '%Y-%m-%d %H')
 		order by reg_date asc
 	</select>
+	
+	<!-- 준맨 추가-->
+	<select id="tableAnsim" resultType="java.util.HashMap">
+		select date_format(reg_date,'%Y-%m-%d') day,avg(watt) avg from data where date_format(reg_date,'%Y-%m')=(date_format(now(),'%Y-%m')) group by day order by 1 desc;
+	</select>
 </mapper>
