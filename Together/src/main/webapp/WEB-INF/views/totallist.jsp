@@ -52,6 +52,10 @@
 							<button class="btn btn-default room" style="margin: 15px" id="${sub2.group_no}">${sub2.group_name}</button>
 						</c:forEach>
 						<hr>
+						
+						<hr>
+							<button class="btn btn-default room" style="margin: 15px">테스트방</button>
+						<hr>
 
 						<div class="consent"></div>
 					</div>

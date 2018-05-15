@@ -45,123 +45,56 @@ public class RegisterDAOImpl implements RegisterDAO {
 	}
 
 	@Override
-
 	public Groups root(Map<String, Object> map) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectOne(NAMESPACE+".rootInfo",map);
-
+		return session.selectOne(NAMESPACE + ".rootInfo", map);
 	}
 
- 
-
 	@Override
-
 	public void insertGroups(Groups groups) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		session.insert(NAMESPACE+".insertGroups",groups); 
-
+		session.insert(NAMESPACE + ".insertGroups", groups);
 	}
 
- 
-
 	@Override
-
 	public int selectGroupsNo(String group_name) throws Exception {
-
-		int result=session.selectOne(NAMESPACE+".selectGroupsNo",group_name);
-
+		int result = session.selectOne(NAMESPACE + ".selectGroupsNo", group_name);
 		return result;
-
 	}
 
- 
-
-	
-
 	@Override
-
 	public int userGroupNo(String id) throws Exception {
-
-		int result=session.selectOne(NAMESPACE+".userGroupNo", id);
-
+		int result = session.selectOne(NAMESPACE + ".userGroupNo", id);
 		return result;
-
 	}
 
- 
-
 	@Override
-
 	public List<Groups> roomList(int parent_group) throws Exception {
-
-		return session.selectList(NAMESPACE+".userRoot", parent_group);
-
-		
-
+		return session.selectList(NAMESPACE + ".userRoot", parent_group);
 	}
 
- 
-
 	@Override
-
 	public int confirmRoomNo(String group_name) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectOne(NAMESPACE+".confirmRoom", group_name);
-
+		return session.selectOne(NAMESPACE + ".confirmRoom", group_name);
 	}
 
- 
-
 	@Override
-
 	public List<Groups> consentlist(int parent_group) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectList(NAMESPACE+".consentList", parent_group);
-
+		return session.selectList(NAMESPACE + ".consentList", parent_group);
 	}
 
- 
-
 	@Override
-
 	public Groups groupsData(int group_no) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectOne(NAMESPACE+".groupsData", group_no);
-
+		return session.selectOne(NAMESPACE + ".groupsData", group_no);
 	}
-
- 
 
 	@Override
-
 	public List<String> substrData(int plug_no) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectList(NAMESPACE+".SubstrData", plug_no);
-
+		return session.selectList(NAMESPACE + ".SubstrData", plug_no);
 	}
-
- 
 
 	@Override
 
 	public List<Datas> avgtimeData(int plug_no) throws Exception {
-
-		// TODO Auto-generated method stub
-
-		return session.selectList(NAMESPACE+".AvgTimeData", plug_no);
-
+		return session.selectList(NAMESPACE + ".AvgTimeData", plug_no);
 	}
 
 	/*
