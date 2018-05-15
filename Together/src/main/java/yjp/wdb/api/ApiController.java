@@ -53,6 +53,7 @@ public class ApiController {
 	@RequestMapping(value = "getStatus", method = RequestMethod.GET)
 	public Device getStatus() {
 		Device d = new Device();
+		// isocketsapi?cmd=getControlPortStatus&devid=디바이스번호&port=포트번호
 
 		String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1";
 		RestTemplate template = new RestTemplate();
@@ -63,7 +64,7 @@ public class ApiController {
 			JSONParser parser = new JSONParser();
 			Object obj = parser.parse(json);
 			JSONObject jsonObj = (JSONObject) obj;
-			d.setResult((String) jsonObj.get("result"));
+			d.setResult((String) jsonObj.get("status"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -5,7 +5,7 @@ $(document).ready(function() {
     dataType: "json",
     success: function(data) {
       // alert("성공 - " + data.status);
-      if (data.result == "success") {
+      if (data.result == "on") {
         // $("p").toggle();
         check.trigger("click");
       }

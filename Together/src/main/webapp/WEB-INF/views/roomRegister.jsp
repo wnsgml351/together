@@ -16,59 +16,32 @@
 
 <script>
 	$(document).ready(function() {
-
 		//var formObj=$("form");
-
 		$("#roomAdd").click(function() {
-
 			var groupName = $("#group_name").val();
-
 			var groupNo = $("#group_no").val();
-
-			alert('그룹이름' + groupName + '그룹번호' + groupNo);
-
+			// alert('그룹이름' + groupName + '그룹번호' + groupNo);
 			$.ajax({
-
 				url : "groupRepeat",
-
 				data : {
-
 					group_name : groupName,
-
 					parent_group : groupNo
-
 				},
-
 				dataType : 'json',
-
 				success : function(data) {
-
 					alert('성공');
-
 				},
-
 				error : function() {
-
 					//alert('실패');
-
 				}
-
 			});
-
 		});
-
 		$("#next").click(function() {
-
-			alert('다음 누름');
-
+			// alert('다음 누름');
 			window.location.href = "roomList";
-
 		});
-
 	});
 </script>
-
-
 
 <script type="text/javascript">
 	var cnt = 0;
@@ -76,24 +49,15 @@
 	var imgs = [ [ "resources/img/room1.PNG" ], [ "resources/img/room2.PNG" ],
 			[ "resources/img/room3.PNG" ], [ "resources/img/room4.PNG" ],
 			[ "resources/img/room5.PNG" ], [ "resources/img/room6.PNG" ] ];
-
 	function changeBanner() {
-
 		document.getElementById("banner").src = imgs[cnt];
-
 		setTimeout(function() {
-
 			cnt++;
-
 			if (cnt == imgs.length)
 				cnt = 0;
-
 			changeBanner();
-
 		}, 2000);
-
 	}
-
 	window.onload = changeBanner;
 </script>
 </head>

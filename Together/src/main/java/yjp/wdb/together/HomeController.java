@@ -1,8 +1,6 @@
 package yjp.wdb.together;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import yjp.wdb.domain.Building;
 import yjp.wdb.domain.Datas;
-import yjp.wdb.domain.ElecData;
 import yjp.wdb.domain.Groups;
 import yjp.wdb.domain.Login;
 import yjp.wdb.domain.Register;
