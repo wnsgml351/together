@@ -14,8 +14,7 @@ $(document).ready(function() {
     yAxis: {
       categories: ['앙', '김', '옥', '띄']
     },
-    xAxis: {
-    }
+    xAxis: {}
   }
   var chart = new Highcharts.Chart(options);
 });

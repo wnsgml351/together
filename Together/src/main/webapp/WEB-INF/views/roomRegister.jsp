@@ -1,129 +1,100 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@ page session="false"%>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html lang="UTF-8">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport"
-
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
 <meta name="description" content="">
-
 <meta name="author" content="">
-
 <title>Document</title>
 
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-
-	crossorigin="anonymous"></script>
-
- 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <script>
+	$(document).ready(function() {
 
-$(document).ready(function() {
+		//var formObj=$("form");
 
-	//var formObj=$("form");
+		$("#roomAdd").click(function() {
 
-			$("#roomAdd").click(function() {
+			var groupName = $("#group_name").val();
 
-				var groupName=$("#group_name").val();
+			var groupNo = $("#group_no").val();
 
-				var groupNo=$("#group_no").val();
+			alert('그룹이름' + groupName + '그룹번호' + groupNo);
 
-				alert('그룹이름'+groupName+'그룹번호'+groupNo);
+			$.ajax({
 
-				$.ajax({
+				url : "groupRepeat",
 
-					url:"groupRepeat",
+				data : {
 
-					data:{
+					group_name : groupName,
 
-						group_name:groupName,
+					parent_group : groupNo
 
-						parent_group:groupNo
+				},
 
-					},
+				dataType : 'json',
 
-					dataType:'json',
+				success : function(data) {
 
-					success:function(data){
+					alert('성공');
 
-						alert('성공');
+				},
 
-					},
+				error : function() {
 
-					error:function(){
+					//alert('실패');
 
-						//alert('실패');
-
-					}
-
-				});
+				}
 
 			});
 
-		
+		});
 
-		$("#next").click(function(){
+		$("#next").click(function() {
 
 			alert('다음 누름');
 
-			window.location.href="roomList";
+			window.location.href = "roomList";
 
-		});	
+		});
 
-			
-
-});
-
+	});
 </script>
 
- 
+
 
 <script type="text/javascript">
+	var cnt = 0;
 
-	var cnt=0;
+	var imgs = [ [ "resources/img/room1.PNG" ], [ "resources/img/room2.PNG" ],
+			[ "resources/img/room3.PNG" ], [ "resources/img/room4.PNG" ],
+			[ "resources/img/room5.PNG" ], [ "resources/img/room6.PNG" ] ];
 
-	var imgs=[["resources/img/room1.PNG"],["resources/img/room2.PNG"],["resources/img/room3.PNG"],["resources/img/room4.PNG"],["resources/img/room5.PNG"],["resources/img/room6.PNG"]];
+	function changeBanner() {
 
-	
+		document.getElementById("banner").src = imgs[cnt];
 
-	function changeBanner(){
-
-		document.getElementById("banner").src=imgs[cnt];
-
-		setTimeout(function(){
+		setTimeout(function() {
 
 			cnt++;
 
-			if(cnt==imgs.length) cnt=0;
-
-			
+			if (cnt == imgs.length)
+				cnt = 0;
 
 			changeBanner();
 
-		},2000);
+		}, 2000);
 
 	}
 
-	window.onload=changeBanner;
-
+	window.onload = changeBanner;
 </script>
 </head>
 
@@ -215,7 +186,7 @@ $(document).ready(function() {
 				<jsp:include page="footer.jsp" flush="false" />
 			</div>
 		</div>
-		</div>
-		</body>
+	</div>
+</body>
 
 </html>

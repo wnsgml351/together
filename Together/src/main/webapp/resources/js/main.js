@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
   };
   var myChart = new Chart(chart, {
-    type: 'line',
+    type: 'bar',
     data: cData,
     option: cOption
   });
@@ -102,9 +102,6 @@ function insertData(myChart, arr) {
   var d;
   var dd;
   for (var i = 0; i < len; i++) {
-    /*
-     * d = new Date(arr[i].reg_string_date); dd = splitDate(d);
-     */
     dd = arr[i].reg_string_date.split(" ");
     dd[1] = dd[1] + "~" + (parseInt(dd[1]) + 1);
     console.log(dd[1]);

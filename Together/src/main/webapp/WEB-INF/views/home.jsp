@@ -33,21 +33,25 @@ p {
 <body style="background-color: purple; background: rgba(111, 66, 193, 0.5)">
 	<div class="container mt-auto text-center" style="font-size: 5rem; color: #f8f9fa;">
 		<img src="./resources/img/logo.png" class="rounded mx-auto d-block" style="margin-top: 10rem;"> <b>Power Manager Home</b>
-		<p>
+		<p><h5>
 			저희 파워 매니저 홈에 방문해주셔서 감사합니다.
 			<br>
 			저희 홈페이지를 통해 가정에서 쓰는 전기를 절약 해보세요
 			<br>
+			</h5>
+			<!--
 			회원이 아니실 경우에는 체험하기 버튼을 통하여 기능들을 미리 만나보세요!
+			-->
 		</p>
 		<div class="btnblock">
 			<a href="login" class="btn btn-outline-light btn-lg" style="width: 250px;">로그인</a>
 		</div>
 
+<!-- 
 		<div class="btnblock" style="margin-bottom: 10rem">
 			<a href="guestMain" class="btn btn-outline-light btn-lg" style="width: 250px;">체험하기</a>
 		</div>
-
+ -->
 	</div>
 
 </body>

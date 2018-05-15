@@ -50,7 +50,6 @@
 	background: red;
 	border-radius: 100px;
 }
-
 </style>
 </head>
 <body class="sticky-footer bg-dark" id="page-top">
@@ -59,52 +58,62 @@
 	</div>
 	<div class="content-wrapper">
 		<div class="container-fluid">
-			
+
+<!-- 
 			<div style="text-align: center">
 				<img src="../resources/img/안심메인사진.PNG" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
 			</div>
-		
-			
+ -->
+
 			<div>
+				<div id="thidDiv" class="alert text-center" role="alert">
+					<h5>
+						<b id="status"></b>
+					</h5>
+				</div>
+				
+				<!-- 
 				<div id="thidDiv" style="display: inline-block;"></div>
 				<div style="display: inline-block; font-size: 20px;">
 					<b id="status"></b>
 
 				</div>
-				
+				 -->
+
 				<!-- 차트 -->
 				<div>
 					<canvas id="myAreaChart" height="100%"></canvas>
 				</div>
 			</div>
 			<!-- 한 달 데이터 기준으로 테이블로 보여주기 -->
-			<br><hr>
+			<br>
+			<hr>
 			<div class="container" style="text-align: center;">
 				<h2>이 번달 기록</h2>
-	
-				<table class="table">
-				    <thead>
-				      <tr>
-				        <th>날짜</th>
-				        <th>총 평균 사용량</th>
-				        <th>등록된 기기 사용량</th>
-				      </tr>
-				    </thead>
-				    <c:forEach var="item" items="${list}">
-					    
-					     <tr class="table-info">
-					        <td>${item.day}</td>
-					        <td>${item.avg}</td>
-					        <td>${item.avg/4}</td>
-					      </tr>
-					</c:forEach>
-				    <tbody>
-				      
 
-				    </tbody>
-				  </table>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>날짜</th>
+							<th>총 평균 사용량</th>
+							<th>등록된 기기 사용량</th>
+						</tr>
+					</thead>
+					<c:forEach var="item" items="${list}">
+
+						<tr class="table-info">
+							<td>${item.day}</td>
+							<td>${item.avg}</td>
+							<td>${item.avg/4}</td>
+						</tr>
+					</c:forEach>
+					<tbody>
+
+
+					</tbody>
+				</table>
 			</div>
-			
+
 		</div>
 	</div>
 
