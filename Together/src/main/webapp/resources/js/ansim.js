@@ -40,7 +40,7 @@ $(document).ready(function() {
         Push.create("보호대상자 위험 감지", {
           body: "대상자에게 연락을 취해보세요.",
           icon: '../resources/img/danger.png',
-          timeout: 4000,
+          timeout: 15000,
           onClick: function() {
             window.focus();
             this.close();

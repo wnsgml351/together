@@ -14,8 +14,10 @@ $(document).ready(function() {
   check.click(function(e) {
     if (check.is(":checked") == true) {
       run("on", e);
+//    	 $("p").toggle();
     } else {
       run("off", e);
+//    	 $("p").toggle();
     }
   });
 

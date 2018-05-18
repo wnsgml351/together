@@ -20,7 +20,7 @@
 				<img src="./resources/img/socket.png" style="border: 1px solid lightgray; border-radius: 0px 15px 15px 0px">
 				<div class="fontposition">
 					<img src="./resources/img/power-on.png">
-					<h2 style="display: inline-block; color: gray">&nbsp본관 300호</h2>
+					<h3 style="display: inline-block; color: gray">&nbsp민호방 - 콘센트1</h3>
 				</div>
 				<div class="imgposition">
 					<img src="./resources/img/on.png">
