@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import yjp.wdb.domain.Date;
 import yjp.wdb.domain.ElecData;
 import yjp.wdb.persistence.TogetherDAO;
 
@@ -22,7 +21,22 @@ public class TogetherServiceImpl implements TogetherService {
 	}
 
 	@Override
-	public Double getThisMonthSumData(Date d) throws Exception {
-		return dao.getThisMonthSumData(d);
+	public Double getThisMonthSumData() throws Exception {
+		return dao.getThisMonthSumData();
+	}
+
+	@Override
+	public List<ElecData> getRecent12H() throws Exception {
+		return dao.getRecent12H();
+	}
+
+	@Override
+	public Double getThisDaySumData() throws Exception {
+		return dao.getThisDaySumData();
+	}
+
+	@Override
+	public int getThisMonthStack() throws Exception {
+		return dao.getThisMonthStack();
 	}
 }

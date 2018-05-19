@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjp.wdb.together.AnsimMapper">
+	<select id="ansim" resultType="ElecData">
+		select title, sum(watt) as watt, date_format(reg_date, '%Y-%m-%d %H') as reg_string_date from data
+		where reg_date > DATE_SUB(NOW(),INTERVAL 1 day)
+		group by date_format(reg_date, '%Y-%m-%d %H')
+		order by reg_date asc
+	</select>
+	
+	<!-- 준맨 추가-->
+	<select id="tableAnsim" resultType="java.util.HashMap">
+		select date_format(reg_date,'%Y-%m-%d') day,avg(watt) avg from data where date_format(reg_date,'%Y-%m')=(date_format(now(),'%Y-%m')) group by day order by 1 desc;
+	</select>
+</mapper>

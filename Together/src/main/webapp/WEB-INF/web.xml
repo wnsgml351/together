@@ -44,4 +44,84 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+
+
+	<!-- 에러페이지 -->
+
+	<!-- 접근 금지 -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/WEB-INF/views/errors/error403.jsp</location>
+	</error-page>
+
+	<!-- 서버, 파일을 찾을수 없음 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/errors/error404.jsp</location>
+	</error-page>
+
+	<!-- 리소스를 허용할 수 없음 -->
+	<error-page>
+		<error-code>405</error-code>
+		<location>/WEB-INF/views/errors/error405.jsp</location>
+	</error-page>
+
+	<!-- 프록시 인증 필요 -->
+	<error-page>
+		<error-code>407</error-code>
+		<location>/WEB-INF/views/errors/error407.jsp</location>
+	</error-page>
+
+	<!-- 요청시간 초과 -->
+	<error-page>
+		<error-code>408</error-code>
+		<location>/WEB-INF/views/errors/error408.jsp</location>
+	</error-page>
+
+	<!-- 충돌이 일어났습니다. -->
+	<error-page>
+		<error-code>409</error-code>
+		<location>/WEB-INF/views/errors/error409.jsp</location>
+	</error-page>
+
+	<!-- 영구 정지 -->
+	<error-page>
+		<error-code>409</error-code>
+		<location>/WEB-INF/views/errors/error410.jsp</location>
+	</error-page>
+
+	<!-- 내부 서버 오류 -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/views/errors/error500.jsp</location>
+	</error-page>
+
+	<!-- 필요한 기능이 서버셍 설치되지 않음 -->
+	<error-page>
+		<error-code>501</error-code>
+		<location>/WEB-INF/views/errors/error501.jsp</location>
+	</error-page>
+
+	<!-- 서버가 과부화된 상황 -->
+	<error-page>
+		<error-code>502</error-code>
+		<location>/WEB-INF/views/errors/error502.jsp</location>
+	</error-page>
+
+	<!-- server가 멈춤 -->
+	<error-page>
+		<error-code>503</error-code>
+		<location>/WEB-INF/views/errors/error503.jsp</location>
+	</error-page>
+
+	<!-- 해당 HTTP버전을 지원하지 않음 -->
+	<error-page>
+		<error-code>505</error-code>
+		<location>/WEB-INF/views/errors/error505.jsp</location>
+	</error-page>
+
+
+
+
 </web-app>

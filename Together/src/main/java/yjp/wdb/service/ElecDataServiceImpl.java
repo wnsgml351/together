@@ -1,5 +1,6 @@
 package yjp.wdb.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,55 +17,14 @@ public class ElecDataServiceImpl implements ElecDataService {
 	private ElecDataDAO dao;
 
 	@Override
-	public List<ElecData> test(ElecData e) {
-		return dao.test(e);
-	}
-
-	@Override
-	public List<ElecData> dataDay() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.dataDay();
-	}
-
-	@Override
-	public List<List<ElecData>> ansim() throws Exception {
-		// TODO Auto-generated method stub
+	public List<ElecData> ansim() throws Exception {
 		return dao.ansim();
 	}
 
 	@Override
-	public List<List<ElecData>> ansimall() throws Exception {
+	public List<HashMap<String, Object>> ansimTable() throws Exception {
 		// TODO Auto-generated method stub
-		return dao.ansimall();
+		return dao.ansimTable();
 	}
-
-	@Override
-	public List<ElecData> dataMonth() throws Exception {
-		return dao.dataMonth();
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<ElecData> ansimDayAll() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansimDayAll();
-	}
-
-	@Override
-	public List<List<ElecData>> ansimdayLast() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansimdayLast();
-	}
-
-	/*@Override
-	public List<List<ElecData>> ansima() throws Exception {
-		// TODO Auto-generated method stub
-		return dao.ansima();
-	}*/
-	
-	
-	
-	
 
 }
