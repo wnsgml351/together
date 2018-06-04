@@ -9,19 +9,37 @@
 <link href="./resources/css/control.css" rel="stylesheet" type="text/css">
 <title>관리</title>
 </head>
-<body class="fixed-nav sticky-footer bg-light">
+<body class="sticky-footer bg-dark" id="page-top">
 	<div>
 		<jsp:include page="header.jsp" flush="false" />
 	</div>
 	<div class="content-wrapper">
 		<div class="container-fluid">
-			<label class="switch"> <input type="checkbox" id="checkbox"> <span class="slider round"></span>
-			</label>
-			<p>OFF</p>
-			<p style="display: none;">ON</p>
+			<div class="alert alert-info" role="alert"><h5><b>Smart PDU</b></h5></div>
+			<div class="row" style="position: relative;">
+				<img src="./resources/img/socket.png" style="border: 1px solid lightgray; border-radius: 0px 15px 15px 0px">
+				<div class="fontposition">
+					<img src="./resources/img/power-on.png">
+					<h3 style="display: inline-block; color: gray">&nbsp민호방 - 콘센트1</h3>
+				</div>
+				<div class="imgposition">
+					<img src="./resources/img/on.png">
+				</div>
+
+				<div class="power">
+					<label class="switch"> <input type="checkbox" id="checkbox"> <span class="slider round"></span>
+					</label>
+					<p>OFF</p>
+					<p style="display: none;">ON</p>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
-
+	<div>
+		<jsp:include page="footer.jsp" flush="false" />
+	</div>
 
 </body>
 </html>

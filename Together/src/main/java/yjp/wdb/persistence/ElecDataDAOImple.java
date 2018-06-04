@@ -1,5 +1,6 @@
 package yjp.wdb.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,6 +20,12 @@ public class ElecDataDAOImple implements ElecDataDAO {
 	@Override
 	public List<ElecData> ansim() throws Exception {
 		return session.selectList(NAMESPACE + ".ansim");
+	}
+
+	@Override
+	public List<HashMap<String, Object>> ansimTable() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(NAMESPACE+".tableAnsim");
 	}
 
 }

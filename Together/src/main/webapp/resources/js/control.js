@@ -5,7 +5,7 @@ $(document).ready(function() {
     dataType: "json",
     success: function(data) {
       // alert("성공 - " + data.status);
-      if (data.result == "success") {
+      if (data.result == "on") {
         // $("p").toggle();
         check.trigger("click");
       }
@@ -14,8 +14,10 @@ $(document).ready(function() {
   check.click(function(e) {
     if (check.is(":checked") == true) {
       run("on", e);
+//    	 $("p").toggle();
     } else {
       run("off", e);
+//    	 $("p").toggle();
     }
   });
 

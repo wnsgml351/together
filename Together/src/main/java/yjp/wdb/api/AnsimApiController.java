@@ -3,9 +3,7 @@ package yjp.wdb.api;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.swing.plaf.synth.SynthScrollBarUI;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,17 @@
 $(document).ready(function() {
+  /*
+  var test = {
+    id: {
+      text: "id-text"
+    },
+    pw: {
+      text: "pw-text"
+    }
+  };
+  console.log(test);
+  console.log(test.id);
+  console.log(test.id.text);
+  */
   changeData();
   setInterval(changeData, 25 * 1000);
   var chart = $("#myAreaChart")[0];
@@ -6,7 +19,7 @@ $(document).ready(function() {
   var cData = {
     labels: [],
     datasets: [{
-      label: "datas",
+      label: "watt",
       backgroundColor: "rgba(255, 0, 0, 0.5)",
       borderColor: "rgba(255, 0, 0, 0.2)",
       data: [],
@@ -32,7 +45,7 @@ $(document).ready(function() {
     }
   };
   var myChart = new Chart(chart, {
-    type: 'line',
+    type: 'bar',
     data: cData,
     option: cOption
   });
@@ -40,11 +53,9 @@ $(document).ready(function() {
     url: "getRecent12H",
     success: function(data) {
       /*
-      for (var i = 0; i < data.length; i++) {
-        console.log("와트 : " + data[i].watt);
-        console.log("날짜 : " + data[i].reg_string_date);
-      }
-      */
+       * for (var i = 0; i < data.length; i++) { console.log("와트 : " +
+       * data[i].watt); console.log("날짜 : " + data[i].reg_string_date); }
+       */
       insertData(myChart, data);
     },
     error: function(data) {
@@ -57,8 +68,28 @@ function changeData() {
   $.ajax({
     url: "getThisMonthSumData",
     success: function(data) {
-      console.log(data + "kWh");
-      $("#sum").text(data + "kWh");
+      console.log("당월 - " + data + "kWh");
+      $("#month").text(data + "kWh");
+    },
+    error: function() {
+      alert("실패");
+    }
+  });
+  $.ajax({
+    url: "getThisDaySumData",
+    success: function(data) {
+      console.log("금일 - " + data + "kWh");
+      $("#day").text(data + "kWh");
+    },
+    error: function() {
+      alert("실패");
+    }
+  });
+  $.ajax({
+    url: "getThisMonthStack",
+    success: function(data) {
+      console.log("누진 - " + data + "단계");
+      $("#stack").text(data + "단계");
     },
     error: function() {
       alert("실패");
@@ -71,9 +102,6 @@ function insertData(myChart, arr) {
   var d;
   var dd;
   for (var i = 0; i < len; i++) {
-    /*
-     * d = new Date(arr[i].reg_string_date); dd = splitDate(d);
-     */
     dd = arr[i].reg_string_date.split(" ");
     dd[1] = dd[1] + "~" + (parseInt(dd[1]) + 1);
     console.log(dd[1]);

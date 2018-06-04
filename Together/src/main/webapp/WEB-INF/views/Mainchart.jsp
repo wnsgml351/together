@@ -7,6 +7,7 @@
 	</div>
 	<div class="card-body">
 		<canvas id="myAreaChart" height="100%"></canvas>
+		<!-- <canvas id="container" height="100%"></canvas>  -->
 	</div>
 	<div class="card-footer small text-muted">
 		<a class="pull-right" style="color: #495057" href="#">more <i class="fa fa-arrow-right"></i></a>

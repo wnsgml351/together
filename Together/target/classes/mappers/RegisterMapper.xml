@@ -13,105 +13,53 @@
 	  </select>
 	
 	  <!-- 내가 수정 -->
-
 	  <insert id="insertAdd">
-
 	  	insert into building(b_category,b_name,b_address,id)
-
 	  	values (#{b_category},#{b_name},#{b_address},#{id})
-
 	  </insert>
-
-		
-
-	 
-
-	  	
 
 		<!-- 내가 수정 -->
-
 	  <insert id="insertGroups">
-
 	  	insert into groups(group_name,parent_group)
-
 	  	values (#{group_name},#{parent_group})
-
 	  </insert>
 
-	
-
 	  <!-- 그룹 이름에 대해서 그룹번호 땡겨오기 -->
-
 	  <select id="selectGroupsNo" resultType="int">
-
 	  	select group_no from groups where group_name=#{group_name}
-
 	  </select>
 
-	
-
-	 
-
 	<!--  사용자가 가지고있는 그룹넘버 가지고 오기 -->
-
 	 <select id="userGroupNo" resultType="int">
-
 	 	select group_no from users where id=#{id}
-
 	 </select>
 
-	 
-
 	 <!-- 사용자가 가지고있는 그룹번호에 대해 그 그룹번호를 parent_group으로 가지는 그룹번호 가지고오기 -->
-
 	<select id="userRoot" resultType="Groups">
-		select * from groups where parent_group=(select group_no from groups where parent_group=#{parent_group})
+		select * from groups where parent_group=any(select group_no from groups where parent_group=#{parent_group})
 	</select>
-
-	
 
 	<!-- 콘센트 등록할때 방 이름 확인하고... 방 번호 받아오기 -->
-
 	<select id="confirmRoom" resultType="int">
-
 		select group_no from groups where group_name=#{group_name}
-
 	</select>
-
-	
 
 	<select id="consentList" resultType="Groups">
-
 		select * from groups where parent_group=#{parent_group}
-
 	</select>
-
-	
 
 	<!-- 그룹 번호를 주면 그룹에 대한 정보 가지고 오기 -->
-
 	<select id="groupsData" resultType="Groups">
-
 		select * from groups where group_no=#{group_no}
-
 	</select>
-
-	
 
 	<!-- 저장된 연도 월 날짜 시간 잘라서 중복없이 콘센트 번호 전달 받기 -->
-
 	<select id="SubstrData" resultType="String">
-
 		select distinct(left(time,13)) from datas where plug_no=#{plug_no} order by 1
-
 	</select>
 
-	
-
 	<select id="AvgTimeData" resultType="Datas">
-
 		select DATE_FORMAT(time,'%Y-%m-%d %H') time,avg(ampere) ampere from datas where plug_no=#{plug_no} group by DATE_FORMAT(time,'%Y-%m-%d %H')
-
 	</select>
 	
   </mapper>

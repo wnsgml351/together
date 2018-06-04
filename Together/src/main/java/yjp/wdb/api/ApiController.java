@@ -1,19 +1,15 @@
 package yjp.wdb.api;
 
-import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.context.annotation.RequestScope;
 
 import yjp.wdb.domain.Device;
 import yjp.wdb.domain.ElecData;
@@ -39,26 +35,25 @@ public class ApiController {
 
 	@RequestMapping(value = "getThisMonthSumData", method = RequestMethod.GET)
 	public Double getThisMonthSumData() throws Exception {
-		Calendar c = Calendar.getInstance();
-
-		yjp.wdb.domain.Date date = new yjp.wdb.domain.Date();
-
-		String start = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-1";
-		String end = Integer.toString(c.get(Calendar.YEAR)) + "-" + Integer.toString(c.get(Calendar.MONTH) + 1) + "-31";
-
-		date.setStartDate(start);
-		date.setEndDate(end);
-
-		Double d = service.getThisMonthSumData(date);
-
-		System.out.println(start + " - " + end + " - " + d);
+		Double d = service.getThisMonthSumData();
 
 		return d;
+	}
+
+	@RequestMapping(value = "getThisDaySumData", method = RequestMethod.GET)
+	public Double getThisDaySumData() throws Exception {
+		return service.getThisDaySumData();
+	}
+
+	@RequestMapping(value = "getThisMonthStack", method = RequestMethod.GET)
+	public int getThisMonthStack() throws Exception {
+		return service.getThisMonthStack();
 	}
 
 	@RequestMapping(value = "getStatus", method = RequestMethod.GET)
 	public Device getStatus() {
 		Device d = new Device();
+		// isocketsapi?cmd=getControlPortStatus&devid=디바이스번호&port=포트번호
 
 		String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getControlPortStatus&devid=361A24C0B62ABA394510230920B88641&port=1";
 		RestTemplate template = new RestTemplate();
@@ -69,7 +64,7 @@ public class ApiController {
 			JSONParser parser = new JSONParser();
 			Object obj = parser.parse(json);
 			JSONObject jsonObj = (JSONObject) obj;
-			d.setResult((String) jsonObj.get("result"));
+			d.setResult((String) jsonObj.get("status"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -38,6 +38,8 @@
 				</ul></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">실시간 전력량</span>
 			</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/control"> <i class="fa fa-fw fa-toggle-on"></i> <span class="nav-link-text">원격제어</span>
+			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="${pageContext.request.contextPath}/Ansim/ansim2"> <i class="fa fa-fw fa-bullhorn"></i> <span class="nav-link-text">독거노인 안심서비스</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"><a class="nav-link" href="#"> <i class="fa fa-fw fa-cart-plus"></i> <span class="nav-link-text">상품 추천 서비스</span>
@@ -79,7 +81,7 @@
 				<div class="dropdown-menu" aria-labelledby="messagesDropdown" style="min-width: 20rem;">
 					<h6 class="dropdown-header">메세지</h6>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="/Ansim/ansim2"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
+					<a class="dropdown-item" href="${pageContext.request.contextPath}/Ansim/ansim2"> <strong>독거노인 안심 서비스</strong> <span class="small float-right text-muted">12:18 PM</span>
 						<div class="dropdown-message small">안심 서비스가 등록되었습니다.</div>
 					</a>
 				</div></li>

@@ -31,7 +31,7 @@ public class TestService {
 	@Scheduled(fixedDelay = 25000)
 	public void TestSchedular() {
 
-		System.out.println("===== 데이터 수신 시작 =====");
+		// System.out.println("===== 데이터 수신 시작 =====");
 
 		try {
 			String url = "http://net.yjc.ac.kr:100/isocketsapi?cmd=getSensorPortData&devid=361A24C0B62ABA394510230920B88641&port=1";
@@ -47,7 +47,7 @@ public class TestService {
 				JSONObject jObj = (JSONObject) jArray.get(i);
 				if (jObj.get("paramUnit").equals("W")) {
 					ElecData e = new ElecData();
-					System.out.println("값 : " + jObj.get("paramValue"));
+					// System.out.println("값 : " + jObj.get("paramValue"));
 
 					try {
 						int v = convertValue(jObj.get("paramValue"));
@@ -63,9 +63,9 @@ public class TestService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("===== 데이터 수신 끝 =====");
+		// System.out.println("===== 데이터 수신 끝 =====");
 	}
-	
+
 	// @Scheduled(fixedDelay = 1000)
 	private void testOnOff() {
 		System.out.println("===== 껏다 켰다 시작 =====");
@@ -83,8 +83,6 @@ public class TestService {
 		}
 		System.out.println("===== 껏다 켰다 끝 =====");
 	}
-	
-	
 
 	private int convertValue(Object o) {
 
